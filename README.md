@@ -1,3 +1,3 @@
-# Yuancheng-Xu.github.io
-Personal Website https://yuancheng-xu.github.io/
+# XinYu.github.io
+Personal Website https://XinYu.github.io/
 
