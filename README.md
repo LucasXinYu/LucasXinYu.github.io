@@ -1,3 +1,3 @@
-# XinYu.github.io
-Personal Website https://XinYu.github.io/
+# LucasXinYu.github.io
+Personal Website https://LucasXinYu.github.io
 
