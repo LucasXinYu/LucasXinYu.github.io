@@ -8,11 +8,16 @@ strong{
   margin-bottom:16px;
 }
 
+.visitor-wrapper .container-fluid{
+  max-width:860px;
+}
+
 .visitor-widget-shell{
   border:1px solid var(--very-light-gray);
   border-radius:10px;
   background:linear-gradient(180deg,#fbfbfb 0%,#f3f5f7 100%);
-  padding:24px;
+  max-width:960px;
+  padding:20px;
   box-shadow:0 10px 25px rgba(0,0,0,.05);
 }
 
@@ -20,6 +25,13 @@ strong{
   min-height:120px;
   display:flex;
   justify-content:center;
+}
+
+.visitor-widget-embed > div,
+.visitor-widget-embed > iframe,
+.visitor-widget-embed > img,
+.visitor-widget-embed img{
+  max-width:100%;
 }
 
 .x-icon{
