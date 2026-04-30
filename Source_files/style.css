@@ -19,15 +19,15 @@ strong{
 }
 
 .visitor-wrapper .container-fluid{
-  max-width:860px;
+  max-width:720px;
 }
 
 .visitor-widget-shell{
   border:1px solid var(--very-light-gray);
   border-radius:10px;
   background:linear-gradient(180deg,#fbfbfb 0%,#f3f5f7 100%);
-  max-width:960px;
-  padding:20px;
+  max-width:720px;
+  padding:16px;
   box-shadow:0 10px 25px rgba(0,0,0,.05);
 }
 
@@ -42,6 +42,11 @@ strong{
 .visitor-widget-embed > img,
 .visitor-widget-embed img{
   max-width:100%;
+}
+
+.visitor-widget-embed > div{
+  width:100%;
+  max-width:640px;
 }
 
 .x-icon{
