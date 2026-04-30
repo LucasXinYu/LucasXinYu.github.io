@@ -51,7 +51,7 @@
 
 <body>
 <div class="container-fluid">
-<nav class="navbar navbar-expand-sm navbar-dark bg-primary fixed-top">
+<nav class="navbar navbar-expand-sm navbar-dark fixed-top">
 
 <div class="container-fluid">
 <a class="navbar-brand" href="#"><serif>Homepage</serif></a>
@@ -238,23 +238,15 @@ Links
       <div class="col col-wrapper">
         <div class="section-title">Visitor Map</div>
         <p style="text-align:justify;">
-          This section is reserved for a live visitor globe/map so I can see where visitors come from around the world.
-          Since this site is a static page, geographic visitor analytics needs a third-party tracking widget.
+          A live globe showing where visitors come from around the world.
         </p>
         <div class="visitor-widget-shell">
-          <div class="visitor-widget-placeholder">
-            <div class="visitor-widget-title">Globe widget placeholder</div>
-            <p>
-              Recommended: MapMyVisitors or PulseMaps. After creating your widget, replace this placeholder with the
-              provider's embed snippet.
-            </p>
-            <p>
-              Paste the widget code inside the
-              <code>&lt;div class="visitor-widget-embed"&gt;...&lt;/div&gt;</code> below.
-            </p>
-          </div>
           <div class="visitor-widget-embed">
-            <!-- Paste your visitor globe/map embed code here. -->
+            <script
+              type="text/javascript"
+              id="mmvst_globe"
+              src="https://mapmyvisitors.com/globe.js?d=urS5UVqhc408YILflGIgECF2c-TY79hXJwZE8HpP7bc">
+            </script>
           </div>
         </div>
       </div>
