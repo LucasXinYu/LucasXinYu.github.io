@@ -4,6 +4,16 @@ strong{
  font-weight:bold;
 }
 
+.news-scroll-shell{
+  max-height:200px;
+  overflow-y:auto;
+  padding:18px 18px 18px 0;
+  border:1px solid rgba(15,39,71,.08);
+  border-radius:14px;
+  background:linear-gradient(180deg,#fbfcfe 0%,#f3f6fa 100%);
+  box-shadow:0 10px 24px rgba(15,39,71,.05);
+}
+
 .visitor-wrapper p{
   margin-bottom:16px;
 }
