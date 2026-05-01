@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Diffusion-LPO</title>
+  <desc id="desc">Cover image for the paper Towards Better Optimization For Listwise Preference in Diffusion Models.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="720" fill="url(#bg)" />
+  <circle cx="190" cy="160" r="90" fill="#93c5fd" opacity="0.16" />
+  <circle cx="1010" cy="560" r="120" fill="#f8fafc" opacity="0.12" />
+  <rect x="90" y="100" width="1020" height="520" rx="28" fill="#ffffff" opacity="0.08" stroke="#bfdbfe" stroke-width="2" />
+  <text x="120" y="190" fill="#dbeafe" font-family="Helvetica, Arial, sans-serif" font-size="34" font-weight="700" letter-spacing="4">ICLR 2026</text>
+  <text x="120" y="290" fill="#ffffff" font-family="Helvetica, Arial, sans-serif" font-size="64" font-weight="800">Diffusion-LPO</text>
+  <text x="120" y="365" fill="#e2e8f0" font-family="Helvetica, Arial, sans-serif" font-size="30">Towards Better Optimization For Listwise</text>
+  <text x="120" y="410" fill="#e2e8f0" font-family="Helvetica, Arial, sans-serif" font-size="30">Preference in Diffusion Models</text>
+  <text x="120" y="510" fill="#bfdbfe" font-family="Helvetica, Arial, sans-serif" font-size="24">Listwise preference optimization for text-to-image diffusion alignment</text>
+</svg>
