@@ -7,3 +7,10 @@ meta.svg: https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc
 bytedance.svg: https://upload.wikimedia.org/wikipedia/commons/0/07/ByteDance_logo_English.svg
 microsoft.svg: https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg
 tiktok.svg: https://upload.wikimedia.org/wikipedia/commons/b/b6/Tiktok_logo_text.svg
+
+Symbol-only assets used in the experience section:
+google-icon.svg: https://upload.wikimedia.org/wikipedia/commons/3/3c/Google_Favicon_2025.svg (CC0 vectorization; original Google brand mark)
+meta-icon.svg: https://upload.wikimedia.org/wikipedia/commons/0/05/Meta_Platforms_Inc._logo_%28cropped%29.svg (PD-textlogo)
+tiktok-icon.png: TikTok_Icon_Black_Square.png, extracted unchanged from TikTok's official asset pack, https://sf16-va.tiktokcdn.com/obj/eden-va2/uvzhqeh7nuhd/tt4d/logo-pack.zip
+bytedance-icon.svg: Symbol extracted from bytedance.svg above; original colored paths preserved, wordmark removed, viewBox tightened.
+microsoft-icon.svg: Symbol extracted from microsoft.svg above; original colored rectangles preserved, wordmark removed, viewBox tightened.

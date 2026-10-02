@@ -8,8 +8,10 @@ strong{
 .experience-wrapper .section-title{margin:0}
 .experience-list{border-top:1px solid #e6ebf2}
 .experience-item{display:flex;align-items:flex-start;gap:24px;padding:24px 0;border-bottom:1px solid #e6ebf2}
-.experience-logo{display:flex;align-items:center;justify-content:flex-start;flex:0 0 260px;height:76px}
-.experience-logo img{display:block;width:auto;height:44px;max-width:256px;object-fit:contain}
+.experience-logo{display:flex;align-items:center;justify-content:center;flex:0 0 80px;height:80px}
+.experience-logo img{display:block;width:64px;height:64px;object-fit:contain}
+.experience-logo--meta img,.experience-logo--microsoft img{width:56px;height:56px}
+.experience-logo--tiktok img{width:80px;height:80px;border-radius:6px}
 .experience-details{flex:1;min-width:0}
 .experience-heading{display:flex;align-items:baseline;justify-content:space-between;gap:10px 20px;flex-wrap:wrap}
 .experience-heading h3{margin:0;color:var(--cardinal);font-size:20px;line-height:1.4;font-weight:700}
@@ -19,11 +21,11 @@ strong{
 .experience-keywords{display:flex;flex-wrap:wrap;gap:6px 8px;list-style:none;margin:0;padding:0}
 .experience-keywords li{padding:3px 10px;border-radius:6px;background:#eef3f9;color:#35516f;font-size:12px;font-weight:500;line-height:1.6}
 @media(max-width:575.98px){
-  .experience-item{gap:14px;padding:20px 0}
-  .experience-item{flex-direction:column;gap:14px}
-  .experience-logo{flex:0 0 auto;width:100%;height:44px}
-  .experience-logo img{width:auto;height:36px;max-width:210px}
-  .experience-details{width:100%}
+  .experience-item{gap:16px;padding:20px 0}
+  .experience-logo{flex-basis:64px;height:64px}
+  .experience-logo img{width:48px;height:48px}
+  .experience-logo--microsoft img{width:44px;height:44px}
+  .experience-logo--tiktok img{width:64px;height:64px}
   .experience-heading{gap:4px}
   .experience-heading h3{font-size:18px;width:100%}
   .experience-date{font-size:13px}
