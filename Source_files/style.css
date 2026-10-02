@@ -83,3 +83,7 @@ strong{
   width:100%;
   max-width:640px;
 }
+
+.visitor-widget-embed.is-unavailable #mapmyvisitors-widget{display:none!important}
+.visitor-map-fallback{align-self:center;text-align:center;padding:16px;color:#667386;font-size:14px}
+.visitor-map-fallback p{margin:0 0 6px}
