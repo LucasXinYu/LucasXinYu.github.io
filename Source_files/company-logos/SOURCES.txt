@@ -1,0 +1,10 @@
+Company logo assets from Simple Icons 11.15.0 (CC0-1.0).
+Source: https://github.com/simple-icons/simple-icons/tree/11.15.0
+SVG paths preserved; fill colors applied for homepage presentation.
+Brand trademarks belong to their respective owners.
+
+google.svg: https://cdn.jsdelivr.net/npm/simple-icons@11.15.0/icons/google.svg
+meta.svg: https://cdn.jsdelivr.net/npm/simple-icons@11.15.0/icons/meta.svg
+tiktok.svg: https://cdn.jsdelivr.net/npm/simple-icons@11.15.0/icons/tiktok.svg
+bytedance.svg: https://cdn.jsdelivr.net/npm/simple-icons@11.15.0/icons/bytedance.svg
+microsoft.svg: https://cdn.jsdelivr.net/npm/simple-icons@11.15.0/icons/microsoft.svg
