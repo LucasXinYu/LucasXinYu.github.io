@@ -1,10 +1,9 @@
-Company logo assets from Simple Icons 11.15.0 (CC0-1.0).
-Source: https://github.com/simple-icons/simple-icons/tree/11.15.0
-SVG paths preserved; fill colors applied for homepage presentation.
-Brand trademarks belong to their respective owners.
+Full-color company logos downloaded unchanged.
+Google: official website asset.
+Meta, ByteDance, Microsoft, TikTok: Wikimedia Commons brand-logo files (PD-textlogo); trademarks belong to their respective owners.
 
-google.svg: https://cdn.jsdelivr.net/npm/simple-icons@11.15.0/icons/google.svg
-meta.svg: https://cdn.jsdelivr.net/npm/simple-icons@11.15.0/icons/meta.svg
-tiktok.svg: https://cdn.jsdelivr.net/npm/simple-icons@11.15.0/icons/tiktok.svg
-bytedance.svg: https://cdn.jsdelivr.net/npm/simple-icons@11.15.0/icons/bytedance.svg
-microsoft.svg: https://cdn.jsdelivr.net/npm/simple-icons@11.15.0/icons/microsoft.svg
+google.svg: https://www.gstatic.com/marketing-cms/assets/images/f5/d3/a7f9db7045429cb6dc6be56bdcbe/google-logo-about.svg
+meta.svg: https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg
+bytedance.svg: https://upload.wikimedia.org/wikipedia/commons/0/07/ByteDance_logo_English.svg
+microsoft.svg: https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg
+tiktok.svg: https://upload.wikimedia.org/wikipedia/commons/b/b6/Tiktok_logo_text.svg
