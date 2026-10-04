@@ -42,7 +42,7 @@
 <link href="Source_files/academicons.css" rel="stylesheet">
 
 <link href="Source_files/style.css?v=smaller-portrait-2" rel="stylesheet">
-<link href="Source_files/home-robot.css?v=1" rel="stylesheet">
+<link href="Source_files/home-robot.css?v=swordsman-2" rel="stylesheet">
 <link rel="stylesheet" href="Source_files/font-awesome-4.7.0/css/font-awesome.min.css">
 <style>
 @media (min-width: 768px) {
@@ -119,77 +119,152 @@ Links
 <div class="description">
 <!-- A keyboard-accessible SVG companion; no external animation library. -->
 <div class="home-robot" id="home-robot">
-  <span class="home-robot__speech" aria-hidden="true">hello, human</span>
-  <button class="home-robot__button" type="button" aria-label="Say hello to the robot" title="Hover or tap to say hello">
-    <svg class="home-robot__drawing" viewBox="0 0 180 190" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <span class="home-robot__speech" aria-hidden="true">AETHER · online</span>
+  <button class="home-robot__button" type="button" aria-label="Activate the robot swordsman" title="Hover to power up · tap for a blade flourish">
+    <svg class="home-robot__drawing" viewBox="0 0 260 300" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
       <defs>
-        <linearGradient id="robot-shell" x1="0" y1="0" x2=".85" y2="1" gradientUnits="objectBoundingBox">
-          <stop stop-color="#fff"/><stop offset=".45" stop-color="#e4edf4"/><stop offset="1" stop-color="#8aa1b7"/>
+        <linearGradient id="robot-armor" x1="0" y1="0" x2=".9" y2="1">
+          <stop stop-color="#76899f"/><stop offset=".24" stop-color="#35465e"/><stop offset=".58" stop-color="#1b263d"/><stop offset="1" stop-color="#080e1c"/>
         </linearGradient>
-        <linearGradient id="robot-visor" x2=".8" y2="1">
-          <stop stop-color="#263c56"/><stop offset="1" stop-color="#071422"/>
+        <linearGradient id="robot-silver" x1="0" y1="0" x2=".8" y2="1">
+          <stop stop-color="#f4f8fc"/><stop offset=".28" stop-color="#bbcbdc"/><stop offset=".53" stop-color="#6b829e"/><stop offset=".7" stop-color="#c1d0df"/><stop offset="1" stop-color="#374860"/>
         </linearGradient>
-        <linearGradient id="robot-metal" x2="1" y2="1">
-          <stop stop-color="#8da7bd"/><stop offset="1" stop-color="#30465e"/>
+        <linearGradient id="robot-edge" x2="1" y2="1">
+          <stop stop-color="#9cfaff"/><stop offset=".5" stop-color="#36c9ea"/><stop offset="1" stop-color="#9163ff"/>
+        </linearGradient>
+        <linearGradient id="robot-blade" x1="0" y1="0" x2="1" y2=".25">
+          <stop stop-color="#7386ba"/><stop offset=".4" stop-color="#1c324e"/><stop offset=".65" stop-color="#b4faff"/><stop offset="1" stop-color="#efffff"/>
+        </linearGradient>
+        <linearGradient id="robot-trail" x1="0" y1="0" x2="1" y2="1">
+          <stop stop-color="#bc9bff" stop-opacity="0"/><stop offset=".55" stop-color="#51e5ff" stop-opacity=".7"/><stop offset="1" stop-color="#b6ffff" stop-opacity="0"/>
         </linearGradient>
         <radialGradient id="robot-aura">
-          <stop stop-color="#63dded" stop-opacity=".3"/><stop offset="1" stop-color="#63dded" stop-opacity="0"/>
+          <stop stop-color="#6adcf3" stop-opacity=".26"/><stop offset=".65" stop-color="#8371eb" stop-opacity=".08"/><stop offset="1" stop-color="#6adcf3" stop-opacity="0"/>
         </radialGradient>
-        <filter id="robot-glow" x="-70%" y="-70%" width="240%" height="240%">
-          <feGaussianBlur stdDeviation="1.8" result="blur"/>
+        <radialGradient id="robot-core">
+          <stop stop-color="#f0ffff"/><stop offset=".3" stop-color="#69eeff"/><stop offset=".75" stop-color="#298abf"/><stop offset="1" stop-color="#17223d"/>
+        </radialGradient>
+        <linearGradient id="robot-thrust" x2="0" y2="1">
+          <stop stop-color="#b5ffff" stop-opacity=".9"/><stop offset=".4" stop-color="#5dceff" stop-opacity=".45"/><stop offset="1" stop-color="#866dff" stop-opacity="0"/>
+        </linearGradient>
+        <filter id="robot-glow" x="-80%" y="-80%" width="260%" height="260%">
+          <feGaussianBlur stdDeviation="2" result="blur"/>
           <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
         </filter>
       </defs>
-      <ellipse cx="90" cy="170" rx="49" ry="6" fill="#16344f" opacity=".1"/>
-      <g class="home-robot__halo">
-        <ellipse cx="90" cy="167" rx="66" ry="18" fill="url(#robot-aura)"/>
-        <ellipse cx="90" cy="167" rx="48" ry="9" fill="none" stroke="#32b8cf" stroke-width="1.2"/>
-        <ellipse class="home-robot__orbit" cx="90" cy="167" rx="54" ry="12" fill="none" stroke="#188da9" stroke-width="2" stroke-dasharray="14 36" pathLength="100"/>
+      <ellipse cx="122" cy="279" rx="65" ry="7" fill="#182339" opacity=".09"/>
+      <g class="home-robot__halo" fill="none">
+        <ellipse cx="124" cy="273" rx="92" ry="24" fill="url(#robot-aura)"/>
+        <ellipse cx="124" cy="273" rx="68" ry="12" stroke="#52b8d0" stroke-width=".8"/>
+        <ellipse class="home-robot__orbit" cx="124" cy="273" rx="77" ry="17" stroke="url(#robot-edge)" stroke-width="1.8" stroke-dasharray="22 5 3 20" pathLength="100"/>
+        <ellipse class="home-robot__orbit home-robot__orbit--reverse" cx="124" cy="273" rx="56" ry="8" stroke="#8f72d5" stroke-width="1" stroke-dasharray="15 35" pathLength="100"/>
+        <path d="M42 273 H51 M197 273 H206 M124 253 V257 M124 289 V293" stroke="#5998b4" stroke-width="1"/>
       </g>
-      <g class="home-robot__float" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M77 136 L77 150 Q82 156 89 150 L88 137 M94 137 L94 150 Q101 156 106 150 L105 136" fill="url(#robot-metal)" stroke="#4b647c" stroke-width="1.5"/>
-        <path d="M73 151 H87 M95 151 H109" stroke="#6addeb" stroke-width="2"/>
-        <path d="M80 92 H101 V111 H80Z" fill="url(#robot-metal)" stroke="#4b647c" stroke-width="2"/>
-        <g stroke="#5b7288" stroke-width="1.8">
-          <path d="M58 109 Q47 110 46 121 L42 137 Q44 144 50 141 L59 124Z" fill="url(#robot-shell)"/>
-          <circle cx="49" cy="139" r="6" fill="url(#robot-metal)"/>
-          <g class="home-robot__arm">
-            <path d="M121 107 Q132 108 135 120 L140 134 Q139 141 132 139 L121 122Z" fill="url(#robot-shell)"/>
-            <circle cx="136" cy="141" r="7" fill="url(#robot-metal)"/>
-            <path d="M133 142 L137 145 M138 140 L142 142" stroke="#8ef4ff" stroke-width="1.5"/>
-          </g>
-          <circle cx="57" cy="111" r="7" fill="url(#robot-metal)"/>
-          <circle cx="124" cy="112" r="7" fill="url(#robot-metal)"/>
-          <path d="M65 102 Q90 97 116 102 L120 125 Q117 142 90 145 Q64 141 61 125Z" fill="url(#robot-shell)"/>
+      <g class="home-robot__float" stroke-linejoin="round" stroke-linecap="round">
+        <!-- Swept propulsion fins behind the armor. -->
+        <g stroke="#33425f" stroke-width="1.2">
+          <path d="M81 108 L54 86 L59 133 L81 157Z" fill="url(#robot-armor)"/>
+          <path d="M65 101 L68 126 L78 138 L76 113Z" fill="#0b1426"/>
+          <path d="M156 108 L181 87 L177 131 L159 155Z" fill="url(#robot-armor)"/>
+          <path d="M172 102 L168 126 L159 138 L162 113Z" fill="#0b1426"/>
+          <path d="M59 95 L64 121 M176 96 L172 120" stroke="url(#robot-edge)" stroke-width="2"/>
         </g>
-        <path d="M72 109 Q90 105 108 109" fill="none" stroke="#fff" stroke-width="2" opacity=".8"/>
-        <path d="M75 135 H105" stroke="#637e93" stroke-width="1.4"/>
-        <circle cx="90" cy="121" r="10" fill="#233f53" stroke="#7794a9"/>
-        <g class="home-robot__core" filter="url(#robot-glow)">
-          <circle cx="90" cy="121" r="5.5" fill="none" stroke="#6ff1ff" stroke-width="1.8"/>
-          <circle cx="90" cy="121" r="2" fill="#caffff"/>
+        <g class="home-robot__thrusters" fill="url(#robot-thrust)">
+          <path d="M64 134 L78 137 L75 186 L69 170Z"/>
+          <path d="M160 136 L174 133 L168 175 L161 186Z"/>
+          <path d="M87 250 H106 L99 277 L93 268Z M132 250 H150 L142 273 L137 265Z"/>
         </g>
+        <!-- Articulated hips, shins and split armored boots. -->
+        <g stroke="#26364e" stroke-width="1.4">
+          <path d="M97 168 H142 L147 185 L135 196 H103 L91 185Z" fill="url(#robot-armor)"/>
+          <path d="M98 178 L113 183 L110 211 L93 214 L87 202Z" fill="url(#robot-silver)"/>
+          <path d="M127 183 L142 178 L151 201 L145 214 L129 211Z" fill="url(#robot-silver)"/>
+          <path d="M95 184 L106 188 L103 203 L92 203 M134 189 L140 185 L147 203 L136 204" fill="#27364e"/>
+          <circle cx="99" cy="211" r="7" fill="#0d1729"/><circle cx="140" cy="211" r="7" fill="#0d1729"/>
+          <path d="M88 211 L109 216 L105 241 L94 251 L84 242Z" fill="url(#robot-armor)"/>
+          <path d="M128 217 L148 211 L155 241 L143 250 L131 242Z" fill="url(#robot-armor)"/>
+          <path d="M88 214 L95 218 L92 238 L86 240 M143 216 L148 214 L152 240 L146 237" fill="url(#robot-silver)" stroke="none"/>
+          <path d="M85 241 L102 243 L108 253 L81 253 L77 249Z M134 243 L151 240 L164 249 L160 253 H132Z" fill="url(#robot-silver)"/>
+          <path d="M83 253 H107 M133 253 H159" stroke="#111f37" stroke-width="3"/>
+          <path d="M96 221 L94 234 M140 221 L143 235" stroke="#68dfee" stroke-width="1.6"/>
+        </g>
+        <!-- Gauntlet on the free arm. -->
+        <g stroke="#24334b" stroke-width="1.5">
+          <path d="M77 122 L68 147 L80 157 L91 135Z" fill="url(#robot-silver)"/>
+          <circle cx="74" cy="149" r="7" fill="#101c30"/>
+          <path d="M66 150 L80 153 L77 177 L62 178 L57 165Z" fill="url(#robot-armor)"/>
+          <path d="M59 159 L65 157 L70 170 L64 174Z" fill="url(#robot-silver)"/>
+          <path d="M65 178 L76 179 L80 188 L74 195 L63 191 L59 184Z" fill="#2b3c55"/>
+          <path d="M64 184 L69 189 M69 181 L74 187" stroke="#7b94ad"/>
+          <path d="M67 156 L71 165" stroke="#9b81ff" stroke-width="2"/>
+        </g>
+        <!-- Layered chest and illuminated reactor. -->
+        <path d="M103 96 H135 L139 113 H99Z" fill="#15233a" stroke="#33455e" stroke-width="1.5"/>
+        <path d="M88 109 L106 103 H134 L153 111 L146 151 L136 174 H102 L89 155Z" fill="url(#robot-armor)" stroke="#26354e" stroke-width="1.8"/>
+        <path d="M91 109 L111 111 L120 125 L96 128 L84 117Z M129 111 L150 110 L157 119 L144 129 L121 125Z" fill="url(#robot-silver)" stroke="#425670" stroke-width="1.2"/>
+        <path d="M98 111 L110 114 M132 114 L145 112" stroke="#f2fcff" stroke-width="1.3"/>
+        <path d="M94 134 L109 142 L107 159 L97 151Z M143 134 L129 142 L132 159 L141 151Z" fill="#071425" stroke="#364968"/>
+        <path d="M109 156 H130 L133 162 H106Z M107 165 H132 L136 171 H103Z" fill="url(#robot-silver)" stroke="#26364e"/>
+        <path d="M102 119 L112 123 M128 123 L139 119" stroke="#78ebf4" stroke-width="1.5"/>
+        <g class="home-robot__core">
+          <path d="M119 122 L131 129 L131 142 L119 150 L108 142 L108 129Z" fill="#0a162c" stroke="#547596" stroke-width="1.2"/>
+          <circle cx="119.5" cy="136" r="8" fill="url(#robot-core)"/>
+          <path d="M119 129 L125 136 L119 143 L114 136Z" fill="none" stroke="#b4fbff" stroke-width="1" filter="url(#robot-glow)"/>
+        </g>
+        <!-- Angular shoulder plates. -->
+        <path d="M82 104 L98 110 L90 130 L72 134 L63 122 L67 109Z M142 110 L157 104 L172 111 L174 124 L158 134 L148 129Z" fill="url(#robot-armor)" stroke="#2c3f58" stroke-width="1.5"/>
+        <path d="M68 110 L82 107 L92 112 L86 117 L71 119Z M150 112 L158 108 L170 114 L168 120 L155 117Z" fill="url(#robot-silver)"/>
+        <path d="M70 125 L81 126 M158 126 L168 122" stroke="#74e7f4" stroke-width="1.6"/>
+        <!-- Helmet with faceted brow, side fins and a narrow luminous visor. -->
         <g class="home-robot__head">
-          <path d="M90 37 V26" stroke="#5b7288" stroke-width="3"/>
-          <circle cx="90" cy="23" r="3.5" fill="#75e9f4" stroke="#3d7a92" stroke-width="1.5"/>
-          <path d="M43 56 H35 V80 H44 M137 56 H145 V80 H136" fill="url(#robot-metal)" stroke="#4b647c" stroke-width="1.8"/>
-          <path d="M62 36 Q90 31 118 36 Q137 39 139 57 V79 Q136 96 117 99 Q90 105 63 99 Q43 96 41 79 V58 Q42 41 62 36Z" fill="url(#robot-shell)" stroke="#5b7288" stroke-width="1.8"/>
-          <path d="M63 40 Q88 35 116 40" fill="none" stroke="#fff" stroke-width="2.5"/>
-          <rect x="49" y="49" width="82" height="41" rx="17" fill="url(#robot-visor)" stroke="#566f87" stroke-width="1.5"/>
-          <path d="M58 58 Q64 53 76 54" fill="none" stroke="#59768e" opacity=".6" stroke-width="2"/>
+          <path d="M91 52 L89 37 L106 50 M146 52 L151 36 L133 51" fill="url(#robot-silver)" stroke="#344660" stroke-width="1.3"/>
+          <path d="M88 58 L79 64 L83 89 L94 94 M148 57 L158 64 L154 88 L144 94" fill="url(#robot-armor)" stroke="#2d3f58" stroke-width="1.4"/>
+          <path d="M92 48 L114 41 L137 46 L150 62 L148 85 L134 103 L110 107 L92 96 L86 74Z" fill="url(#robot-armor)" stroke="#26364e" stroke-width="1.7"/>
+          <path d="M92 50 L113 44 L132 48 L119 59 L91 64Z" fill="url(#robot-silver)"/>
+          <path d="M132 48 L146 62 L147 72 L125 60Z" fill="#768da6"/>
+          <path d="M95 51 L112 47 L128 49" fill="none" stroke="#e0eef7" stroke-width="1.3"/>
+          <path d="M91 66 L117 62 L146 70 L140 85 L117 92 L94 83Z" fill="#060e1e" stroke="#566b87" stroke-width="1.1"/>
           <g class="home-robot__gaze">
-            <g class="home-robot__eyes" fill="#8ef4ff" filter="url(#robot-glow)">
-              <rect x="66" y="61" width="10" height="15" rx="5"/>
-              <rect x="104" y="61" width="10" height="15" rx="5"/>
+            <g class="home-robot__eyes" filter="url(#robot-glow)">
+              <path d="M96 71 L114 72 L114 78 L98 76Z M123 73 L141 74 L137 79 L123 79Z" fill="#84f5ff"/>
+              <path d="M98 72 L112 73 M125 74 H138" stroke="#e8ffff" stroke-width="1"/>
             </g>
-            <path d="M85 80 Q90 84 95 80" fill="none" stroke="#61c9dd" stroke-width="1.7"/>
           </g>
-          <path d="M36 64 V71 M144 64 V71" stroke="#83ebf4" stroke-width="2"/>
-          <path d="M80 96 H100" stroke="#8da6b9" stroke-width="1.4"/>
+          <path d="M95 85 L107 89 L116 101 L103 98Z M140 87 L128 92 L120 103 L133 99Z" fill="url(#robot-silver)"/>
+          <path d="M111 91 L118 94 L124 91 L121 104 H116Z" fill="#101d33" stroke="#5b728d" stroke-width=".8"/>
+          <path d="M84 67 L86 80 M152 67 L150 80" stroke="#8f8bff" stroke-width="1.7"/>
+          <path d="M104 56 L110 55" stroke="#fff" stroke-width="1"/>
+        </g>
+        <!-- Sword and right forearm move as one articulated assembly. -->
+        <g class="home-robot__sword-arm">
+          <g stroke="#293b55" stroke-width="1.5">
+            <path d="M159 132 L165 147 L175 144 L169 126Z" fill="url(#robot-silver)"/>
+            <circle cx="167" cy="147" r="6" fill="#11203a"/>
+            <path d="M168 143 L183 139 L190 147 L177 159 L166 156 L161 150Z" fill="url(#robot-armor)"/>
+            <path d="M170 142 L182 141 L184 145 L172 150Z" fill="url(#robot-silver)"/>
+          </g>
+          <g class="home-robot__blade">
+            <path d="M182 143 L202 77 Q211 47 234 26 L218 83 L190 146Z" fill="url(#robot-blade)" stroke="#7badd2" stroke-width="1"/>
+            <path d="M190 142 L215 80 L233 28" fill="none" stroke="#b4ffff" stroke-width="2"/>
+            <path class="home-robot__blade-light" d="M191 140 L216 79 L233 29" fill="none" stroke="#72f3ff" stroke-width="3" filter="url(#robot-glow)"/>
+            <path d="M190 128 L207 79 L215 63 M194 121 L200 118 M199 107 L205 104" fill="none" stroke="#59c8ee" stroke-width=".8"/>
+            <path d="M181 146 L174 168 L180 170 L187 148Z" fill="#14243c" stroke="#6785a1" stroke-width="1.2"/>
+            <path d="M178 154 L183 156 M177 160 L181 162 M175 166 L179 167" stroke="#c1aa81" stroke-width="1.5"/>
+            <path d="M174 141 L195 149 L193 153 L172 145Z" fill="url(#robot-silver)" stroke="#334963"/>
+            <path d="M178 143 L191 148" stroke="#ae85ff" stroke-width="1.6"/>
+          </g>
+          <path d="M177 148 L184 150 L184 160 L177 164 L171 159 L172 152Z" fill="url(#robot-silver)" stroke="#30445f" stroke-width="1.2"/>
+          <path d="M176 154 L181 156 M175 158 L180 160" stroke="#30445f" stroke-width="1"/>
         </g>
       </g>
-      <g class="home-robot__signal" fill="none" stroke="#269eb7" stroke-width="1.8" stroke-linecap="round">
-        <path d="M139 27 L144 22 M148 36 H155 M133 19 V13"/>
+      <g class="home-robot__slash" fill="none" stroke-linecap="round">
+        <path d="M179 30 Q253 99 232 185 Q224 213 199 233" stroke="url(#robot-trail)" stroke-width="12"/>
+        <path d="M190 39 Q257 127 211 219" stroke="url(#robot-trail)" stroke-width="2"/>
+      </g>
+      <g class="home-robot__sparks" fill="#67d9f3">
+        <path d="M223 102 L225 111 L232 114 L225 116 L222 126 L220 116 L213 113 L220 111Z"/>
+        <path d="M210 199 L211 204 L216 206 L211 208 L210 214 L208 208 L203 206 L208 204Z"/>
+        <circle cx="243" cy="165" r="1.8"/><circle cx="225" cy="211" r="1.3"/>
       </g>
     </svg>
   </button>
@@ -618,7 +693,7 @@ See  <a href="https://scholar.google.com/citations?user=YMauDFsAAAAJ&hl=en">Goog
 </div>
 
 
-<script src="Source_files/home-robot.js?v=1" defer></script>
+<script src="Source_files/home-robot.js?v=swordsman-2" defer></script>
 <script src="Source_files/jquery-3.js"></script>
 
 <script src="Source_files/popper.js"></script>

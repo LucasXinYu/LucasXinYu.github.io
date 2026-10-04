@@ -26,9 +26,9 @@
     var rect = button.getBoundingClientRect();
     var x = Math.max(-1, Math.min(1, (event.clientX - rect.left) / rect.width * 2 - 1));
     var y = Math.max(-1, Math.min(1, (event.clientY - rect.top) / rect.height * 2 - 1));
-    robot.style.setProperty('--robot-look-x', (x * 3) + 'px');
-    robot.style.setProperty('--robot-look-y', (y * 2) + 'px');
-    robot.style.setProperty('--robot-head-turn', (x * 5) + 'deg');
+    robot.style.setProperty('--robot-look-x', (x * 1.5) + 'px');
+    robot.style.setProperty('--robot-look-y', (y * 1) + 'px');
+    robot.style.setProperty('--robot-head-turn', (x * 4) + 'deg');
   });
 
   button.addEventListener('pointerleave', resetLook);
@@ -39,15 +39,15 @@
   button.addEventListener('click', function () {
     window.clearTimeout(reactionTimer);
     // Restart one short reaction, including on keyboard activation and touch.
-    robot.classList.remove('is-boosting');
+    robot.classList.remove('is-slashing');
     void button.offsetWidth;
-    robot.classList.add('is-boosting');
-    speech.textContent = "let's build something!";
-    status.textContent = 'The robot waves hello.';
+    robot.classList.add('is-slashing');
+    speech.textContent = 'ready when you are';
+    status.textContent = 'The robot performs a blade flourish.';
     reactionTimer = window.setTimeout(function () {
-      robot.classList.remove('is-boosting');
-      speech.textContent = 'hello, human';
+      robot.classList.remove('is-slashing');
+      speech.textContent = 'AETHER · online';
       status.textContent = '';
-    }, 1800);
+    }, 1200);
   });
 })();
