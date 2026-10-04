@@ -1,0 +1,122 @@
+/* All animation stays inside the little companion's footprint. */
+.home-cat {
+  position: fixed;
+  right: max(18px, env(safe-area-inset-right));
+  bottom: max(12px, env(safe-area-inset-bottom));
+  width: 116px;
+  z-index: 1020;
+  pointer-events: none;
+  --cat-look-x: 0px;
+  --cat-look-y: 0px;
+  --cat-head-turn: 0deg;
+}
+
+.home-cat__button {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 44%;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  line-height: 0;
+  pointer-events: auto;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.home-cat__button:focus { outline: none; }
+.home-cat__button:focus-visible {
+  outline: 2px solid #476d96;
+  outline-offset: 3px;
+}
+
+.home-cat__drawing { display: block; width: 100%; height: auto; overflow: visible; }
+.home-cat__speech {
+  position: absolute;
+  right: 4px;
+  bottom: calc(100% + 2px);
+  padding: 6px 11px;
+  border: 1px solid #eadfd3;
+  border-radius: 12px 12px 3px 12px;
+  background: #fffaf4;
+  color: #72584a;
+  font: 12px/1.4 Tahoma, Arial, sans-serif;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(5px);
+  transition: opacity .2s ease, transform .2s ease;
+}
+
+.home-cat__head {
+  transform-origin: 80px 88px;
+  transform: rotate(var(--cat-head-turn));
+  transition: transform .18s ease-out;
+}
+.home-cat__pupils {
+  transform: translate(var(--cat-look-x), var(--cat-look-y));
+  transition: transform .15s ease-out;
+}
+.home-cat__eyes {
+  transform-origin: 80px 60px;
+  animation: home-cat-blink 6s ease-in-out infinite;
+}
+.home-cat__happy-eyes, .home-cat__paw, .home-cat__heart { opacity: 0; }
+.home-cat__tail { transform-origin: 113px 131px; }
+.home-cat__paw { transform-origin: 107px 119px; }
+
+.home-cat:is(.is-curious, .is-petted, :has(:focus-visible)) .home-cat__speech {
+  opacity: 1;
+  transform: translateY(0);
+}
+.home-cat:is(.is-curious, .is-petted, :has(:focus-visible)) .home-cat__tail {
+  animation: home-cat-tail .85s ease-in-out infinite alternate;
+}
+.home-cat:is(.is-curious, .is-petted, :has(:focus-visible)) .home-cat__paw {
+  opacity: 1;
+  animation: home-cat-wave 1.1s ease-in-out infinite;
+}
+.home-cat.is-petted .home-cat__bounce { animation: home-cat-hop .55s ease-in-out; }
+.home-cat.is-petted .home-cat__eyes { opacity: 0; }
+.home-cat.is-petted .home-cat__happy-eyes { opacity: 1; }
+.home-cat.is-petted .home-cat__heart { animation: home-cat-heart 1.3s ease-out both; }
+.home-cat.is-petted .home-cat__heart--two { animation-delay: .15s; }
+
+@keyframes home-cat-blink {
+  0%, 43%, 47%, 100% { transform: scaleY(1); }
+  45% { transform: scaleY(.08); }
+}
+@keyframes home-cat-tail {
+  from { transform: rotate(-8deg); }
+  to { transform: rotate(12deg); }
+}
+@keyframes home-cat-wave {
+  0%, 100% { transform: rotate(-5deg); }
+  50% { transform: rotate(17deg); }
+}
+@keyframes home-cat-hop {
+  0%, 100% { transform: translateY(0); }
+  42% { transform: translateY(-9px); }
+  72% { transform: translateY(1px); }
+}
+@keyframes home-cat-heart {
+  0% { opacity: 0; transform: translateY(4px); }
+  20%, 65% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-16px); }
+}
+
+@media (max-width: 575.98px) {
+  .home-wrapper .description { position: relative; }
+  .home-cat { position: absolute; width: 78px; right: 0; top: 22px; bottom: auto; z-index: 1; }
+  .home-cat__speech { font-size: 11px; padding: 5px 8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-cat *, .home-cat *::before, .home-cat *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .home-cat__head, .home-cat__pupils { transform: none; }
+  .home-cat.is-petted .home-cat__heart { opacity: 1; }
+}
+@media print { .home-cat { display: none; } }

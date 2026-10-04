@@ -42,6 +42,7 @@
 <link href="Source_files/academicons.css" rel="stylesheet">
 
 <link href="Source_files/style.css?v=company-icons-1" rel="stylesheet">
+<link href="Source_files/home-cat.css?v=1" rel="stylesheet">
 <link rel="stylesheet" href="Source_files/font-awesome-4.7.0/css/font-awesome.min.css">
 <style>
 @media (min-width: 768px) {
@@ -135,6 +136,62 @@ Links
 </div>
 <div class="col-12 col-md-7 col-lg-8 col-wrapper">
 <div class="description">
+<!-- A small, keyboard-accessible companion; no external animation library. -->
+<div class="home-cat" id="home-cat">
+  <span class="home-cat__speech" aria-hidden="true">hello, human ♡</span>
+  <button class="home-cat__button" type="button" aria-label="Pet the little cat" title="Hover or tap to say hello">
+    <svg class="home-cat__drawing" viewBox="0 0 160 160" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+      <ellipse class="home-cat__shadow" cx="81" cy="145" rx="44" ry="5" fill="#183451" opacity=".10"/>
+      <g class="home-cat__bounce">
+        <g class="home-cat__tail" fill="none" stroke-linecap="round">
+          <path d="M112 132 C142 139 155 117 142 106 C134 99 135 93 141 87" stroke="#72584a" stroke-width="14"/>
+          <path d="M112 132 C142 139 155 117 142 106 C134 99 135 93 141 87" stroke="#e9b786" stroke-width="9"/>
+          <path d="M140 92 Q138 95 140 99" stroke="#fff3e4" stroke-width="9"/>
+        </g>
+        <g class="home-cat__body" stroke="#72584a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M56 78 C44 88 40 113 45 132 C49 145 111 145 118 131 C123 112 113 89 103 79Z" fill="#e9b786"/>
+          <ellipse cx="81" cy="116" rx="23" ry="25" fill="#fff5e9" stroke="none"/>
+          <path d="M58 110 L56 134 M104 110 L106 134" fill="none"/>
+          <path d="M43 133 C43 124 63 124 65 133 L65 139 L44 139Z" fill="#fff5e9"/>
+          <path d="M96 133 C97 124 116 125 117 133 L117 139 L96 139Z" fill="#fff5e9"/>
+          <path d="M51 135 V139 M58 135 V139 M103 135 V139 M110 135 V139" stroke-width="1.6"/>
+        </g>
+        <g class="home-cat__head" stroke="#72584a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M36 48 L33 21 Q32 13 40 18 L58 32 Q80 26 102 32 L120 18 Q128 14 127 23 L124 49 C139 71 122 96 81 97 C41 97 24 78 30 61 Q31 54 36 48Z" fill="#fff5e9"/>
+          <path d="M38 24 L42 44 L54 35Z M121 24 L117 44 L106 35Z" fill="#e9b0a5" stroke="none"/>
+          <path d="M65 31 Q79 27 94 31 L89 47 Q85 51 81 44 Q76 53 72 46Z" fill="#e9b786" stroke="none"/>
+          <ellipse cx="49" cy="70" rx="9" ry="5" fill="#efb9ad" opacity=".65" stroke="none"/>
+          <ellipse cx="111" cy="70" rx="9" ry="5" fill="#efb9ad" opacity=".65" stroke="none"/>
+          <g class="home-cat__eyes" fill="#493e3a" stroke="none">
+            <g class="home-cat__pupils">
+              <ellipse cx="60" cy="60" rx="5.5" ry="7"/>
+              <ellipse cx="101" cy="60" rx="5.5" ry="7"/>
+              <circle cx="61.5" cy="57.5" r="1.8" fill="#fff"/>
+              <circle cx="102.5" cy="57.5" r="1.8" fill="#fff"/>
+            </g>
+          </g>
+          <g class="home-cat__happy-eyes" fill="none" stroke-width="3">
+            <path d="M54 62 Q60 54 66 62 M95 62 Q101 54 107 62"/>
+          </g>
+          <path d="M76 70 Q81 67 85 70 L81 74Z" fill="#ce8e86" stroke="none"/>
+          <path d="M81 74 V77 M81 77 Q75 83 71 77 M81 77 Q86 83 90 77" fill="none" stroke-width="1.8"/>
+          <path d="M33 69 L44 71 M32 77 L44 76 M116 71 L128 69 M117 76 L129 78" fill="none" stroke-width="1.6"/>
+        </g>
+        <g class="home-cat__paw" stroke="#72584a" stroke-width="2.6" stroke-linecap="round">
+          <path d="M107 120 Q96 114 101 105 L109 94 C117 83 131 93 125 103 L118 118 Q114 124 107 120Z" fill="#fff5e9"/>
+          <ellipse cx="115" cy="104" rx="4.5" ry="5" fill="#e9b0a5" stroke="none"/>
+          <path d="M110 94 L108 98 M116 93 L114 97 M122 96 L120 100" stroke="#ce8e86" stroke-width="2"/>
+        </g>
+      </g>
+      <g class="home-cat__hearts" fill="#d9909a">
+        <path class="home-cat__heart home-cat__heart--one" d="M28 37 C17 30 20 22 26 24 L28 27 L30 24 C37 21 40 30 28 37Z"/>
+        <path class="home-cat__heart home-cat__heart--two" d="M136 54 C126 47 129 40 134 42 L136 45 L138 42 C144 39 148 47 136 54Z"/>
+      </g>
+    </svg>
+  </button>
+  <span class="sr-only" id="home-cat-status" role="status"></span>
+</div>
+
 <h1 class="name">Xin Yu</h1>
 <div>Ph.D. student<br>
 </div>
@@ -557,6 +614,7 @@ See  <a href="https://scholar.google.com/citations?user=YMauDFsAAAAJ&hl=en">Goog
 </div>
 
 
+<script src="Source_files/home-cat.js?v=1" defer></script>
 <script src="Source_files/jquery-3.js"></script>
 
 <script src="Source_files/popper.js"></script>
