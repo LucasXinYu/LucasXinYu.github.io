@@ -1,4 +1,4 @@
-/* A layered SVG swordsman; all effects stay within the corner companion. */
+/* Layered SVG companion with bounded, interruptible action sequences. */
 .home-robot {
   position: fixed;
   right: max(15px, env(safe-area-inset-right));
@@ -47,68 +47,117 @@
   transform: translateY(5px);
   transition: opacity .2s ease, transform .2s ease;
 }
-.home-robot__float { transition: transform .35s ease; }
+.home-robot__float {
+  transform-origin: 120px 177px;
+  animation: home-robot-idle 4.5s ease-in-out infinite;
+}
 .home-robot__head {
   transform-origin: 119px 103px;
   transform: rotate(var(--robot-head-turn));
   transition: transform .16s ease-out;
 }
+.home-robot:not(.is-awake):not([data-action]):not(:has(:focus-visible)) .home-robot__head {
+  animation: home-robot-look 13s ease-in-out infinite;
+}
 .home-robot__gaze {
   transform: translate(var(--robot-look-x), var(--robot-look-y));
   transition: transform .12s ease-out;
 }
-.home-robot__eyes { opacity: .8; transition: opacity .25s ease; }
-.home-robot__sword-arm {
-  transform-origin: 159px 132px;
-  transition: transform .4s cubic-bezier(.2,.7,.3,1);
+.home-robot__eyes {
+  transform-origin: 119px 75px;
+  animation: home-robot-blink 7s ease-in-out infinite;
 }
-.home-robot__core { opacity: .8; transition: opacity .3s ease; }
-.home-robot__halo { opacity: .4; transition: opacity .3s ease; }
-.home-robot__thrusters { opacity: .3; transition: opacity .3s ease; }
-.home-robot__blade-light { opacity: .35; transition: opacity .3s ease; }
-.home-robot__slash, .home-robot__sparks { opacity: 0; pointer-events: none; }
+.home-robot__left-arm { transform-origin: 83px 126px; transition: transform .3s ease; }
+.home-robot__sword-arm { transform-origin: 159px 132px; transform: rotate(10deg); transition: transform .3s ease; }
+.home-robot__legs { transform-origin: 120px 177px; }
+.home-robot__fins { transform-origin: 120px 125px; transition: transform .3s ease; }
+.home-robot__core { transform-origin: 120px 136px; animation: home-robot-breathe 4.5s ease-in-out infinite; }
+.home-robot__halo { opacity: .45; transition: opacity .3s ease; }
+.home-robot__orbit { animation: home-robot-orbit 18s linear infinite; }
+.home-robot__orbit--reverse { animation-direction: reverse; animation-duration: 24s; }
+.home-robot__thrusters { opacity: .35; transition: opacity .3s ease; }
+.home-robot__blade { opacity: 0; transform-origin: 181px 150px; }
+.home-robot__blade-light { opacity: .85; }
+.home-robot__slash, .home-robot__sparks, .home-robot__launch-trails,
+.home-robot__energy, .home-robot__pulse, .home-robot__shield { opacity: 0; pointer-events: none; }
 .home-robot__slash { transform-origin: 159px 132px; }
-.home-robot:is(.is-awake, .is-slashing, :has(:focus-visible)) .home-robot__speech {
-  opacity: 1;
-  transform: translateY(0);
-}
-.home-robot:is(.is-awake, .is-slashing, :has(:focus-visible)) .home-robot__float { transform: translateY(-5px); }
-.home-robot:is(.is-awake, .is-slashing, :has(:focus-visible)) .home-robot__sword-arm { transform: rotate(-13deg); }
-.home-robot:is(.is-awake, .is-slashing, :has(:focus-visible)) :is(.home-robot__halo, .home-robot__core, .home-robot__eyes, .home-robot__thrusters, .home-robot__blade-light) { opacity: 1; }
-.home-robot:is(.is-awake, .is-slashing, :has(:focus-visible)) .home-robot__orbit { animation: home-robot-orbit 3s linear infinite; }
-.home-robot:is(.is-awake, .is-slashing, :has(:focus-visible)) .home-robot__orbit--reverse { animation-direction: reverse; animation-duration: 4s; }
-.home-robot:is(.is-awake, :has(:focus-visible)) .home-robot__thrusters { animation: home-robot-thrust 1.5s ease-in-out infinite alternate; }
-.home-robot.is-slashing .home-robot__sword-arm { animation: home-robot-draw .9s cubic-bezier(.3,.1,.2,1) both; }
-.home-robot.is-slashing .home-robot__float { animation: home-robot-dash .9s ease-in-out both; }
-.home-robot.is-slashing .home-robot__slash { animation: home-robot-slash .9s ease-out both; }
-.home-robot.is-slashing .home-robot__sparks { animation: home-robot-sparks .9s ease-out both; }
+.home-robot__pulse { transform-origin: 120px 137px; }
+.home-robot__shield { transform-origin: 121px 136px; }
+.home-robot__orb-orbit { transform-origin: 0 0; }
+.home-robot:is(.is-awake, [data-action], :has(:focus-visible)) .home-robot__speech { opacity: 1; transform: translateY(0); }
+.home-robot:is(.is-awake, [data-action], :has(:focus-visible)) .home-robot__halo { opacity: 1; }
+.home-robot:is(.is-awake, [data-action], :has(:focus-visible)) .home-robot__orbit { animation-duration: 3s; }
+.home-robot:is(.is-awake, [data-action], :has(:focus-visible)) .home-robot__orbit--reverse { animation-duration: 4s; }
+.home-robot:is(.is-awake, [data-action], :has(:focus-visible)) .home-robot__thrusters { opacity: .8; }
+.home-robot[data-action] .home-robot__float { animation: none; transform: translateY(-5px); }
+.home-robot[data-action] .home-robot__core { animation: none; opacity: 1; }
+.home-robot[data-action] .home-robot__fins { transform: scaleX(1.06); }
 
+/* Greeting: a jointed wave and a small nod, also used on pointer entry. */
+.home-robot[data-action="wave"] .home-robot__left-arm { animation: home-robot-wave var(--robot-action-duration) ease-in-out both; }
+.home-robot[data-action="wave"] .home-robot__head { animation: home-robot-nod var(--robot-action-duration) ease-in-out both; }
+
+/* Charge: the hand lifts an orbiting energy sphere, then lets it dissolve. */
+.home-robot[data-action="charge"] .home-robot__sword-arm { animation: home-robot-present var(--robot-action-duration) ease-in-out both; }
+.home-robot[data-action="charge"] .home-robot__energy { animation: home-robot-effect var(--robot-action-duration) ease both; }
+.home-robot[data-action="charge"] .home-robot__orb { animation: home-robot-orb var(--robot-action-duration) ease both; }
+.home-robot[data-action="charge"] .home-robot__orb-orbit { animation: home-robot-spin 1.8s linear infinite; }
+.home-robot[data-action="charge"] .home-robot__core { animation: home-robot-charge var(--robot-action-duration) ease both; }
+.home-robot[data-action="charge"] .home-robot__pulse { animation: home-robot-pulse var(--robot-action-duration) ease-out both; }
+
+/* Boost: a short flight, tucked legs, jet trails and a soft landing. */
+.home-robot[data-action="boost"] .home-robot__float { animation: home-robot-boost var(--robot-action-duration) cubic-bezier(.3,.1,.3,1) both; }
+.home-robot[data-action="boost"] .home-robot__legs { animation: home-robot-tuck var(--robot-action-duration) ease both; }
+.home-robot[data-action="boost"] .home-robot__thrusters { animation: home-robot-jets var(--robot-action-duration) ease both; }
+.home-robot[data-action="boost"] .home-robot__launch-trails { animation: home-robot-exhaust var(--robot-action-duration) ease both; }
+.home-robot[data-action="boost"] .home-robot__left-arm { transform: rotate(-15deg); }
+.home-robot[data-action="boost"] .home-robot__sword-arm { transform: rotate(25deg); }
+.home-robot[data-action="boost"] .home-robot__fins { transform: scaleX(1.14); }
+
+/* Defense: a translucent hexagonal shield with a moving scan line. */
+.home-robot[data-action="shield"] .home-robot__shield { animation: home-robot-shield var(--robot-action-duration) ease both; }
+.home-robot[data-action="shield"] .home-robot__scan-line { animation: home-robot-scan var(--robot-action-duration) linear both; }
+.home-robot[data-action="shield"] .home-robot__left-arm { transform: rotate(30deg); }
+.home-robot[data-action="shield"] .home-robot__sword-arm { transform: rotate(-24deg); }
+
+/* The projected blade only appears during its own move. */
+.home-robot[data-action="blade"] .home-robot__blade { animation: home-robot-materialize var(--robot-action-duration) ease both; }
+.home-robot[data-action="blade"] .home-robot__sword-arm { animation: home-robot-draw var(--robot-action-duration) cubic-bezier(.3,.1,.2,1) both; }
+.home-robot[data-action="blade"] .home-robot__float { animation: home-robot-dash var(--robot-action-duration) ease-in-out both; }
+.home-robot[data-action="blade"] .home-robot__slash { animation: home-robot-slash var(--robot-action-duration) ease-out both; }
+.home-robot[data-action="blade"] .home-robot__sparks { animation: home-robot-sparks var(--robot-action-duration) ease-out both; }
+
+@keyframes home-robot-idle { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+@keyframes home-robot-look { 0%, 60%, 100% { transform: rotate(0); } 69%, 75% { transform: rotate(-5deg); } 86%, 92% { transform: rotate(4deg); } }
+@keyframes home-robot-blink { 0%, 45%, 49%, 100% { transform: scaleY(1); } 47% { transform: scaleY(.18); } }
+@keyframes home-robot-breathe { 0%, 100% { opacity: .65; } 50% { opacity: 1; } }
 @keyframes home-robot-orbit { to { stroke-dashoffset: -100; } }
-@keyframes home-robot-thrust { from { opacity: .6; } to { opacity: 1; } }
-@keyframes home-robot-draw {
-  0% { transform: rotate(-13deg); }
-  28% { transform: rotate(-25deg); }
-  48% { transform: rotate(32deg); }
-  70% { transform: rotate(22deg); }
-  100% { transform: rotate(-13deg); }
+@keyframes home-robot-spin { to { transform: rotate(360deg); } }
+@keyframes home-robot-wave { 0%, 100% { transform: rotate(0); } 25%, 53%, 80% { transform: rotate(115deg); } 40%, 67% { transform: rotate(137deg); } }
+@keyframes home-robot-nod { 0%, 100% { transform: rotate(0); } 30%, 65% { transform: rotate(-6deg) translateY(1px); } 48% { transform: rotate(2deg); } }
+@keyframes home-robot-present { 0%, 100% { transform: rotate(10deg); } 23%, 78% { transform: rotate(-18deg); } }
+@keyframes home-robot-effect { 0%, 12%, 100% { opacity: 0; } 28%, 76% { opacity: 1; } }
+@keyframes home-robot-orb { 0%, 12% { transform: scale(.15); } 38% { transform: scale(1.1); } 55%, 75% { transform: translateY(-4px) scale(1); } 100% { transform: translateY(-12px) scale(.1); } }
+@keyframes home-robot-charge { 0%, 100% { transform: scale(1); } 40%, 70% { transform: scale(1.2); } }
+@keyframes home-robot-pulse { 0%, 28% { opacity: 0; transform: scale(.35); } 40% { opacity: .7; } 80%, 100% { opacity: 0; transform: scale(2); } }
+@keyframes home-robot-boost {
+  0%, 100% { transform: translate(0, -5px) rotate(0); }
+  18% { transform: translate(0, 1px) rotate(3deg); }
+  42% { transform: translate(-18px, -27px) rotate(-9deg); }
+  65% { transform: translate(4px, -19px) rotate(5deg); }
+  85% { transform: translate(0, -2px) rotate(0); }
 }
-@keyframes home-robot-dash {
-  0%, 100% { transform: translate(0, -5px); }
-  28% { transform: translate(-3px, -8px); }
-  48% { transform: translate(4px, -10px); }
-  75% { transform: translate(1px, -6px); }
-}
-@keyframes home-robot-slash {
-  0%, 25% { opacity: 0; transform: rotate(-20deg); }
-  40% { opacity: .85; }
-  55% { opacity: .6; transform: rotate(8deg); }
-  78%, 100% { opacity: 0; transform: rotate(14deg); }
-}
-@keyframes home-robot-sparks {
-  0%, 38% { opacity: 0; transform: translate(0, 0); }
-  48% { opacity: 1; }
-  85%, 100% { opacity: 0; transform: translate(4px, 6px); }
-}
+@keyframes home-robot-tuck { 0%, 100% { transform: scaleY(1); } 40%, 65% { transform: translateY(-2px) scaleY(.86); } }
+@keyframes home-robot-jets { 0%, 100% { opacity: .35; } 22%, 68% { opacity: 1; } }
+@keyframes home-robot-exhaust { 0%, 14%, 100% { opacity: 0; transform: translate(0, 0); } 26%, 50% { opacity: .8; } 76% { opacity: 0; transform: translate(4px, 7px); } }
+@keyframes home-robot-shield { 0%, 100% { opacity: 0; transform: scale(.7); } 22%, 78% { opacity: .85; transform: scale(1); } }
+@keyframes home-robot-scan { 0%, 18% { transform: translateY(-15px); } 78%, 100% { transform: translateY(165px); } }
+@keyframes home-robot-materialize { 0%, 100% { opacity: 0; transform: scaleY(.1); } 18%, 82% { opacity: 1; transform: scaleY(1); } }
+@keyframes home-robot-draw { 0%, 100% { transform: rotate(10deg); } 30% { transform: rotate(-25deg); } 50% { transform: rotate(32deg); } 70% { transform: rotate(22deg); } 85% { transform: rotate(-13deg); } }
+@keyframes home-robot-dash { 0%, 100% { transform: translate(0, -5px); } 30% { transform: translate(-3px, -8px); } 50% { transform: translate(4px, -10px); } 75% { transform: translate(1px, -6px); } }
+@keyframes home-robot-slash { 0%, 30% { opacity: 0; transform: rotate(-20deg); } 43% { opacity: .85; } 60% { opacity: .6; transform: rotate(8deg); } 80%, 100% { opacity: 0; transform: rotate(14deg); } }
+@keyframes home-robot-sparks { 0%, 40% { opacity: 0; transform: translate(0, 0); } 53% { opacity: 1; } 85%, 100% { opacity: 0; transform: translate(4px, 6px); } }
+.home-robot.is-paused * { animation-play-state: paused !important; }
 @media (max-width: 575.98px) {
   .home-wrapper .description { position: relative; }
   .home-robot { position: absolute; width: 104px; right: 0; top: 1px; bottom: auto; z-index: 1; }
@@ -116,7 +165,9 @@
 }
 @media (prefers-reduced-motion: reduce) {
   .home-robot *, .home-robot *::before, .home-robot *::after { animation: none !important; transition: none !important; }
-  .home-robot__head, .home-robot__gaze,
-  .home-robot:is(.is-awake, .is-slashing, :has(:focus-visible)) :is(.home-robot__float, .home-robot__sword-arm) { transform: none; }
+  .home-robot :is(.home-robot__float, .home-robot__head, .home-robot__gaze, .home-robot__left-arm, .home-robot__sword-arm, .home-robot__fins) { transform: none !important; }
+  .home-robot[data-action="charge"] .home-robot__energy,
+  .home-robot[data-action="shield"] .home-robot__shield,
+  .home-robot[data-action="blade"] .home-robot__blade { opacity: .85; }
 }
 @media print { .home-robot { display: none; } }
