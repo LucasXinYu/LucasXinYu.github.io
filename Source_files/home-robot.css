@@ -1,0 +1,121 @@
+/* A self-contained companion, with motion limited to its own footprint. */
+.home-robot {
+  position: fixed;
+  right: max(18px, env(safe-area-inset-right));
+  bottom: max(10px, env(safe-area-inset-bottom));
+  width: 128px;
+  z-index: 1020;
+  pointer-events: none;
+  --robot-look-x: 0px;
+  --robot-look-y: 0px;
+  --robot-head-turn: 0deg;
+}
+
+.home-robot__button {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 40%;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  line-height: 0;
+  pointer-events: auto;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+.home-robot__button:focus { outline: none; }
+.home-robot__button:focus-visible {
+  outline: 2px solid #0891b2;
+  outline-offset: 2px;
+}
+.home-robot__drawing { display: block; width: 100%; height: auto; overflow: visible; }
+.home-robot__speech {
+  position: absolute;
+  right: 7px;
+  bottom: calc(100% - 3px);
+  padding: 7px 11px;
+  border: 1px solid #27576c;
+  border-radius: 10px 10px 3px 10px;
+  background: #122b3e;
+  color: #c9f7ff;
+  box-shadow: 0 5px 18px #11365016;
+  font: 11px/1.4 ui-monospace, SFMono-Regular, Consolas, monospace;
+  letter-spacing: .02em;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(5px);
+  transition: opacity .2s ease, transform .2s ease;
+}
+.home-robot__float { transition: transform .35s ease; }
+.home-robot__head {
+  transform-origin: 90px 95px;
+  transform: rotate(var(--robot-head-turn));
+  transition: transform .15s ease-out;
+}
+.home-robot__gaze {
+  transform: translate(var(--robot-look-x), var(--robot-look-y));
+  transition: transform .1s ease-out;
+}
+.home-robot__eyes {
+  transform-origin: 90px 69px;
+  animation: home-robot-blink 7s ease-in-out infinite;
+}
+.home-robot__arm { transform-origin: 124px 112px; transition: transform .35s ease; }
+.home-robot__core { opacity: .65; transition: opacity .25s ease; }
+.home-robot__halo { opacity: .35; transition: opacity .3s ease; }
+.home-robot__orbit { transform-origin: 90px 167px; }
+.home-robot__signal { opacity: 0; }
+.home-robot:is(.is-awake, .is-boosting, :has(:focus-visible)) .home-robot__speech {
+  opacity: 1;
+  transform: translateY(0);
+}
+.home-robot:is(.is-awake, .is-boosting, :has(:focus-visible)) .home-robot__float {
+  transform: translateY(-6px);
+}
+.home-robot:is(.is-awake, .is-boosting, :has(:focus-visible)) .home-robot__arm {
+  animation: home-robot-wave 1.5s ease-in-out infinite;
+}
+.home-robot:is(.is-awake, .is-boosting, :has(:focus-visible)) .home-robot__halo,
+.home-robot:is(.is-awake, .is-boosting, :has(:focus-visible)) .home-robot__core { opacity: 1; }
+.home-robot:is(.is-awake, .is-boosting, :has(:focus-visible)) .home-robot__orbit {
+  animation: home-robot-orbit 2.5s linear infinite;
+}
+.home-robot.is-boosting .home-robot__float { animation: home-robot-boost .8s ease-in-out; }
+.home-robot.is-boosting .home-robot__signal { animation: home-robot-signal 1s ease-out both; }
+
+@keyframes home-robot-blink {
+  0%, 44%, 48%, 100% { transform: scaleY(1); }
+  46% { transform: scaleY(.12); }
+}
+@keyframes home-robot-wave {
+  0%, 100% { transform: rotate(0); }
+  30%, 60% { transform: rotate(-118deg); }
+  45%, 75% { transform: rotate(-96deg); }
+}
+@keyframes home-robot-orbit { to { stroke-dashoffset: -100; } }
+@keyframes home-robot-boost {
+  0%, 100% { transform: translateY(-6px); }
+  40% { transform: translateY(-15px); }
+  70% { transform: translateY(-3px); }
+}
+@keyframes home-robot-signal {
+  0% { opacity: 0; transform: translateY(3px); }
+  25%, 55% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-9px); }
+}
+@media (max-width: 575.98px) {
+  .home-wrapper .description { position: relative; }
+  .home-robot { position: absolute; width: 86px; right: 0; top: 15px; bottom: auto; z-index: 1; }
+  .home-robot__speech { font-size: 10px; padding: 5px 8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-robot *, .home-robot *::before, .home-robot *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .home-robot__head, .home-robot__gaze,
+  .home-robot:is(.is-awake, .is-boosting, :has(:focus-visible)) .home-robot__float { transform: none; }
+}
+@media print { .home-robot { display: none; } }
