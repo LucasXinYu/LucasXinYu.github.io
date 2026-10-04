@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="360" viewBox="0 0 600 360" role="img" aria-labelledby="title desc">
+  <title id="title">AltLoRA: alternating low-rank updates</title>
+  <desc id="desc">Two low-rank matrices, A and B, are updated in alternation. Opposite arrows show the alternating projection cycle, with momentum integrated in the low-rank space. The matrix cells are schematic, not measured values.</desc>
+  <!-- Source: https://arxiv.org/abs/2505.12455 -->
+  <style>
+    :root { --bg:#f5f8fc; --surface:#fff; --ink:#1a2942; --muted:#52657e; --line:#d7e1ef; --blue:#4361cc; --blue-soft:#e7edff; --teal:#168977; --teal-soft:#e1f3ef; }
+    @media (prefers-color-scheme:dark) { :root { --bg:#162233; --surface:#1c2d44; --ink:#edf3fc; --muted:#aec0d7; --line:#354c68; --blue:#a8bcff; --blue-soft:#273d67; --teal:#78d9c5; --teal-soft:#1c4546; } }
+    text { font-family:Inter,Arial,sans-serif; fill:var(--ink); }
+    .heading { font-size:34px; font-weight:700; letter-spacing:-1px; }
+    .subtitle { font-size:20px; fill:var(--muted); }
+    .label { font-size:23px; font-weight:600; text-anchor:middle; }
+  </style>
+  <defs>
+    <marker id="blue-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M2 2 8 5 2 8" fill="none" stroke="var(--blue)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+    <marker id="teal-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M2 2 8 5 2 8" fill="none" stroke="var(--teal)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+    <g id="row">
+      <rect width="16" height="16" rx="3"/>
+      <rect x="22" width="16" height="16" rx="3" opacity=".6"/>
+      <rect x="44" width="16" height="16" rx="3" opacity=".85"/>
+      <rect x="66" width="16" height="16" rx="3" opacity=".5"/>
+      <rect x="88" width="16" height="16" rx="3" opacity=".8"/>
+      <rect x="110" width="16" height="16" rx="3" opacity=".65"/>
+    </g>
+  </defs>
+  <rect width="600" height="360" fill="var(--bg)"/>
+  <circle cx="542" cy="30" r="112" fill="var(--blue-soft)" opacity=".6"/>
+  <text x="32" y="59" class="heading">AltLoRA</text>
+  <text x="33" y="91" class="subtitle">Alternating low-rank updates</text>
+
+  <circle cx="142" cy="193" r="78" fill="var(--blue-soft)"/>
+  <circle cx="458" cy="193" r="78" fill="var(--teal-soft)"/>
+  <g transform="translate(79 163)" fill="var(--blue)">
+    <use href="#row"/>
+    <use href="#row" y="22" opacity=".7"/>
+    <use href="#row" y="44" opacity=".9"/>
+  </g>
+  <g transform="translate(488 130) rotate(90)" fill="var(--teal)">
+    <use href="#row"/>
+    <use href="#row" y="22" opacity=".7"/>
+    <use href="#row" y="44" opacity=".9"/>
+  </g>
+  <path d="M229 169Q300 101 370 169" fill="none" stroke="var(--blue)" stroke-width="4" stroke-linecap="round" marker-end="url(#blue-arrow)"/>
+  <path d="M371 219Q300 287 230 219" fill="none" stroke="var(--teal)" stroke-width="4" stroke-linecap="round" marker-end="url(#teal-arrow)"/>
+  <text x="300" y="202" text-anchor="middle" font-size="19" fill="var(--muted)">alternate</text>
+  <text x="142" y="295" class="label">Update A</text>
+  <text x="458" y="295" class="label">Update B</text>
+  <path d="M32 317H568" stroke="var(--line)"/>
+  <text x="300" y="345" text-anchor="middle" font-size="21" font-weight="600">Low rank · Momentum</text>
+</svg>

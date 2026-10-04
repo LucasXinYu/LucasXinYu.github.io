@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="360" viewBox="0 0 600 360" role="img" aria-labelledby="title desc">
+  <title id="title">FedCLUP: personalized federated learning</title>
+  <desc id="desc">A shared model connects to three distinct local models. The illustration highlights the statistical accuracy versus communication trade-off in personalized federated learning; it does not depict numerical results.</desc>
+  <!-- Source: https://arxiv.org/abs/2410.08934 -->
+  <style>
+    :root { --bg:#f5f8fc; --surface:#fff; --ink:#1a2942; --muted:#52657e; --line:#d7e1ef; --blue:#4361cc; --blue-soft:#e7edff; --teal:#168977; --teal-soft:#e1f3ef; --violet:#795abb; --violet-soft:#eee8f9; }
+    @media (prefers-color-scheme:dark) { :root { --bg:#162233; --surface:#1c2d44; --ink:#edf3fc; --muted:#aec0d7; --line:#354c68; --blue:#a8bcff; --blue-soft:#273d67; --teal:#78d9c5; --teal-soft:#1c4546; --violet:#cab4fa; --violet-soft:#3e325a; } }
+    text { font-family:Inter,Arial,sans-serif; fill:var(--ink); }
+    .heading { font-size:34px; font-weight:700; letter-spacing:-1px; }
+    .subtitle { font-size:20px; fill:var(--muted); }
+    .stroke { fill:none; stroke-width:3; stroke-linecap:round; stroke-linejoin:round; }
+  </style>
+  <defs>
+    <g id="model" class="stroke">
+      <path d="m-12 10 12-23 12 23M-12 10h24"/>
+      <circle cy="-13" r="5" fill="var(--surface)"/>
+      <circle cx="-12" cy="10" r="5" fill="var(--surface)"/>
+      <circle cx="12" cy="10" r="5" fill="var(--surface)"/>
+    </g>
+  </defs>
+  <rect width="600" height="360" fill="var(--bg)"/>
+  <circle cx="542" cy="30" r="112" fill="var(--blue-soft)" opacity=".6"/>
+  <text x="32" y="59" class="heading">FedCLUP</text>
+  <text x="33" y="91" class="subtitle">Personalized federated learning</text>
+
+  <text x="300" y="121" text-anchor="middle" font-size="19" fill="var(--muted)">Shared model</text>
+  <rect x="251" y="134" width="98" height="55" rx="13" fill="var(--blue-soft)" stroke="var(--blue)" stroke-width="2.5"/>
+  <g class="stroke" stroke="var(--blue)">
+    <path d="M268 151h43M268 171h43"/>
+    <circle cx="329" cy="151" r="3" fill="var(--blue)" stroke="none"/>
+    <circle cx="329" cy="171" r="3" fill="var(--blue)" stroke="none"/>
+  </g>
+  <path d="M300 190v32M300 206H146q-10 0-10 10v6M300 206h154q10 0 10 10v6" class="stroke" stroke="var(--muted)"/>
+  <path d="m294 199 6-6 6 6m-176 18 6 6 6-6m152 0 6 6 6-6m152 0 6 6 6-6" class="stroke" stroke="var(--muted)"/>
+  <circle cx="136" cy="256" r="32" fill="var(--blue-soft)"/>
+  <circle cx="300" cy="256" r="32" fill="var(--teal-soft)"/>
+  <circle cx="464" cy="256" r="32" fill="var(--violet-soft)"/>
+  <use href="#model" transform="translate(136 256)" stroke="var(--blue)"/>
+  <use href="#model" transform="translate(300 256) rotate(120)" stroke="var(--teal)"/>
+  <use href="#model" transform="translate(464 256) rotate(-120)" stroke="var(--violet)"/>
+  <text x="300" y="307" text-anchor="middle" font-size="21" font-weight="600">Local models</text>
+  <path d="M32 317H568" stroke="var(--line)"/>
+  <text x="300" y="345" text-anchor="middle" font-size="21" font-weight="600">Accuracy ↔ Communication</text>
+</svg>

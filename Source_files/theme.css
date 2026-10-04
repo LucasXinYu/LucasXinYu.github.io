@@ -96,6 +96,29 @@ body { color: var(--page-text); }
 [data-theme="dark"] .experience-logo { background: #f7f9fc; border-radius: 12px; }
 [data-theme="dark"] .pub-wrapper .figure { margin-right: 30px; border-radius: 10px; overflow: hidden; background: #fff; }
 [data-theme="dark"] .pub-wrapper .figure img { padding: 10px; }
+/* The SVG summaries inherit the page color scheme, including manual toggles. */
+.pub-wrapper .figure.figure--summary {
+  margin: 0 30px 0 0;
+  border: 1px solid #d7e1ef;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #f5f8fc;
+}
+.pub-wrapper .figure.figure--summary img {
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: 0;
+  aspect-ratio: 5 / 3;
+}
+[data-theme="dark"] .pub-wrapper .figure.figure--summary {
+  border-color: #354c68;
+  background: #162233;
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .pub-wrapper .section-item--summary > .col-wrapper:first-child { flex: 0 0 42%; max-width: 42%; }
+  .pub-wrapper .section-item--summary > .col-wrapper:last-child { flex: 0 0 58%; max-width: 58%; }
+}
 [data-theme="dark"] .visitor-map-mount { color-scheme: light; color: #18283f; background: #fff; border-radius: 8px; }
 [data-theme="dark"] .home-robot__drawing { filter: drop-shadow(0 0 9px #65ceff26); }
 
