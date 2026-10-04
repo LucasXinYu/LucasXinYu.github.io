@@ -1,0 +1,127 @@
+/* Keep the existing light palette; dark mode changes colors, not layout. */
+:root {
+  color-scheme: light;
+  --page-bg: #fff;
+  --page-text: #000;
+  --paper-muted: #757575;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page-bg: #101722;
+  --page-text: #dce3ed;
+  --paper-muted: #aebbd0;
+  --cardinal: #9ac4ff;
+  --cardinal-dark: #c5ddff;
+  --surface: #182333;
+  --surface-hover: #22324a;
+  --border: #304159;
+  --muted: #aebbd0;
+}
+
+html, body { background-color: var(--page-bg); }
+body { color: var(--page-text); }
+.pub-authors {
+  color: var(--paper-muted);
+  font: 700 18px/1.8em eb garamond, 'dejavu serif', Georgia, serif;
+}
+.pub-note { color: var(--paper-muted); font-size: 14px; }
+
+/* The toggle stays outside the collapsed menu on small screens. */
+.navbar { min-height: 50px; padding: 3px 0; }
+.navbar-brand { order: 0; }
+.navbar-collapse { order: 1; }
+.navbar-toggler { order: 3; }
+.theme-toggle {
+  order: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  margin-left: 16px;
+  padding: 10px;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  background: transparent;
+  color: #eef5ff;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.theme-toggle[hidden] { display: none; }
+.theme-toggle:hover { background: #ffffff14; border-color: #ffffff30; }
+.theme-toggle:focus-visible { outline: 2px solid #b7d7ff; outline-offset: 1px; }
+.theme-toggle svg { width: 21px; height: 21px; }
+.theme-toggle__sun { display: none; }
+[data-theme="dark"] .theme-toggle__moon { display: none; }
+[data-theme="dark"] .theme-toggle__sun { display: block; color: #f5ce80; }
+
+[data-theme="dark"] nav { background-color: #111e32; border-bottom: 1px solid #28384e; }
+[data-theme="dark"] .name,
+[data-theme="dark"] .section-title,
+[data-theme="dark"] .subsection-title,
+[data-theme="dark"] .pub-wrapper .title > a { color: #eef3fb; }
+[data-theme="dark"] .pub-wrapper .title > a:hover { color: var(--cardinal); }
+[data-theme="dark"] .homepage-portrait { border-color: var(--border); box-shadow: 0 14px 32px #0003; }
+[data-theme="dark"] .home-wrapper .description .action-button,
+[data-theme="dark"] .pub-wrapper .pub-button {
+  background: var(--surface);
+  color: var(--cardinal);
+  border-color: var(--border);
+  box-shadow: 0 4px 12px #0002;
+}
+[data-theme="dark"] .home-wrapper .description .action-button:hover,
+[data-theme="dark"] .pub-wrapper .pub-button:hover {
+  background: var(--surface-hover);
+  color: var(--cardinal-dark);
+}
+[data-theme="dark"] .news-card-shell,
+[data-theme="dark"] .visitor-widget-shell {
+  background: linear-gradient(160deg, #192638, #151f2e);
+  border-color: var(--border);
+  box-shadow: 0 10px 24px #0002;
+}
+[data-theme="dark"] .experience-list,
+[data-theme="dark"] .experience-item { border-color: var(--border); }
+[data-theme="dark"] .experience-date,
+[data-theme="dark"] .experience-location,
+[data-theme="dark"] .visitor-map-loading,
+[data-theme="dark"] .visitor-map-note,
+[data-theme="dark"] .visitor-map-fallback { color: var(--muted); }
+[data-theme="dark"] .experience-role { color: var(--page-text); }
+[data-theme="dark"] .experience-keywords li { background: #21314a; color: #c0d8fa; }
+
+/* Preserve original image and vendor-map colors on a light backing. */
+[data-theme="dark"] .experience-logo { background: #f7f9fc; border-radius: 12px; }
+[data-theme="dark"] .pub-wrapper .figure { margin-right: 30px; border-radius: 10px; overflow: hidden; background: #fff; }
+[data-theme="dark"] .pub-wrapper .figure img { padding: 10px; }
+[data-theme="dark"] .visitor-map-mount { color-scheme: light; color: #18283f; background: #fff; border-radius: 8px; }
+[data-theme="dark"] .home-robot__drawing { filter: drop-shadow(0 0 9px #65ceff26); }
+
+@media (max-width: 575.98px) {
+  .navbar-collapse { order: 3; }
+  .navbar-toggler { order: 2; }
+  .theme-toggle { order: 1; margin-left: auto; margin-right: 12px; }
+}
+
+@media print {
+  :root[data-theme="dark"] {
+    color-scheme: light;
+    --page-bg: #fff;
+    --page-text: #000;
+    --paper-muted: #555;
+    --cardinal: #0f2747;
+    --cardinal-dark: #1e4b87;
+    --surface: #fff;
+    --border: #ddd;
+    --muted: #555;
+  }
+  [data-theme="dark"] .name,
+  [data-theme="dark"] .section-title,
+  [data-theme="dark"] .subsection-title,
+  [data-theme="dark"] .pub-wrapper .title > a { color: #000; }
+  [data-theme="dark"] .news-card-shell,
+  [data-theme="dark"] .visitor-widget-shell,
+  [data-theme="dark"] .experience-keywords li { background: #fff; color: #000; }
+}
