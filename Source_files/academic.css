@@ -100,3 +100,49 @@ footer span { margin:0 8px; }
  .experience-location { display:block; }
 }
 @media print { .site-header,.skip-link,#visitors { display:none; } :root[data-theme] { --bg:#fff; --text:#222; --muted:#555; --link:#454b92; --line:#ddd; } .publication,.experience-item { break-inside:avoid; } }
+
+/* Research discovery and a clearer information hierarchy. */
+:root { --accent-surface:#f4f5fc; }
+:root[data-theme="dark"] { --accent-surface:#212435; }
+.nav-links { gap:18px; }
+.section-heading { display:flex; align-items:baseline; justify-content:space-between; gap:12px; margin-bottom:20px; }
+.section-heading h2 { margin:0; }
+.section-heading>span { color:var(--muted); font-size:12px; }
+.focus-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; }
+.focus-card { padding:22px 20px; border:1px solid var(--line); border-radius:12px; background:linear-gradient(145deg,var(--accent-surface),var(--bg)); display:flex; flex-direction:column; }
+.focus-number,.eyebrow { color:var(--link); font-size:10px; font-weight:650; letter-spacing:1.3px; }
+.focus-card h3 { font-size:17px; line-height:1.4; margin:13px 0 9px; letter-spacing:-.25px; }
+.focus-card p { font-size:13px; color:var(--muted); line-height:1.7; margin-bottom:20px; }
+.focus-card>a { margin-top:auto; font-size:12px; font-weight:600; }
+.news-archive { margin-top:17px; }
+.news-archive summary { cursor:pointer; width:fit-content; color:var(--link); font-size:13px; }
+.news-archive summary span { color:var(--muted); margin-left:8px; font-size:12px; }
+.news-archive[open] summary { margin-bottom:18px; }
+.publication-tools { margin:0 0 25px; }
+.publication-tools>label { display:block; font-size:12px; font-weight:600; margin-bottom:6px; }
+#paper-search { width:100%; padding:12px 14px; border:1px solid var(--line); border-radius:8px; background:var(--bg); color:var(--text); font:inherit; font-size:14px; }
+#paper-search::placeholder { color:var(--muted); }
+input:focus-visible,summary:focus-visible { outline:2px solid var(--link); outline-offset:3px; }
+.paper-filters { display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
+.paper-filters button,#reset-papers { padding:7px 13px; border:1px solid var(--line); border-radius:20px; background:var(--bg); color:var(--muted); font:inherit; font-size:12px; cursor:pointer; }
+.paper-filters button[aria-pressed="true"] { color:var(--bg); background:var(--link); border-color:var(--link); }
+#paper-count { font-size:12px; color:var(--muted); margin:12px 0 0; }
+#no-papers { padding:24px; text-align:center; background:var(--soft); border-radius:10px; }
+#no-papers p { margin-bottom:10px; }
+.publication { padding-bottom:26px; border-bottom:1px solid var(--line); scroll-margin-top:120px; }
+.venue { display:inline-block; padding:2px 8px; margin-bottom:8px; background:var(--accent-surface); color:var(--link); border-radius:4px; font-size:11px; }
+.paper-summary { font-size:13px; line-height:1.65; margin:8px 0; }
+.background-grid { display:grid; grid-template-columns:1fr 1fr; gap:32px; }
+.background-grid h3 { font-size:13px; color:var(--muted); }
+.background-list { list-style:none; padding:0; margin:16px 0 0; }
+.background-list li { border-left:2px solid var(--line); padding-left:15px; margin-bottom:20px; font-size:14px; }
+.background-list span { display:block; color:var(--muted); font-size:13px; }
+.contact-panel { padding:26px; border:1px solid var(--line); border-radius:12px; background:var(--accent-surface); }
+.contact-panel h2 { margin:8px 0; }
+.contact-panel p { color:var(--muted); font-size:14px; margin-bottom:16px; }
+.contact-actions { display:flex; flex-wrap:wrap; align-items:center; gap:12px 22px; font-size:13px; }
+.contact-email { overflow-wrap:anywhere; }
+.back-top { display:block; margin-top:8px; }
+@media(max-width:700px) { .nav-links { gap:8px; } .focus-grid { grid-template-columns:1fr; } .focus-card { padding:20px; } .focus-card p { margin-bottom:12px; } }
+@media(max-width:520px) { .background-grid { grid-template-columns:1fr; gap:16px; } .section-heading { align-items:flex-start; flex-direction:column; gap:5px; } .contact-panel { padding:20px; } }
+@media print { .publication-tools,#no-papers { display:none; } .publication[hidden] { display:grid!important; } .focus-card { break-inside:avoid; } }
