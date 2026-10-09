@@ -146,3 +146,42 @@ input:focus-visible,summary:focus-visible { outline:2px solid var(--link); outli
 @media(max-width:700px) { .nav-links { gap:8px; } .focus-grid { grid-template-columns:1fr; } .focus-card { padding:20px; } .focus-card p { margin-bottom:12px; } }
 @media(max-width:520px) { .background-grid { grid-template-columns:1fr; gap:16px; } .section-heading { align-items:flex-start; flex-direction:column; gap:5px; } .contact-panel { padding:20px; } }
 @media print { .publication-tools,#no-papers { display:none; } .publication[hidden] { display:grid!important; } .focus-card { break-inside:avoid; } }
+
+/* Original vector illustrations: tool exchange, optimization, and collaboration. */
+.research-motion { width:100%; height:auto; aspect-ratio:240/130; display:block; margin:0 0 22px; overflow:visible; color:var(--link); }
+.motion-track { fill:none; stroke:currentColor; stroke-width:1; opacity:.2; }
+.motion-node { fill:var(--bg); stroke:currentColor; stroke-width:1.4; }
+.motion-ink { fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+.motion-ring { fill:none; stroke:currentColor; stroke-width:1; stroke-dasharray:3 6; opacity:.35; transform-box:fill-box; transform-origin:center; animation:orbit-ring 24s linear infinite; }
+.motion-dot,.motion-packet { fill:currentColor; }
+.motion-dot { animation:node-breathe 4s ease-in-out infinite; }
+.motion-packet { animation:tool-packet 3s ease-in-out infinite; }
+.packet-two { animation-delay:1.5s; }
+.motion-curve { fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-dasharray:100; animation:trace-curve 6s ease-in-out infinite; }
+.motion-bars { fill:currentColor; opacity:.13; }
+.motion-bars rect { transform-box:fill-box; transform-origin:bottom; animation:bar-rise 6s ease-in-out infinite; }
+.motion-bars rect:nth-child(2) { animation-delay:.15s; }
+.motion-bars rect:nth-child(3) { animation-delay:.3s; }
+.motion-bars rect:nth-child(4) { animation-delay:.45s; }
+.motion-bars rect:nth-child(5) { animation-delay:.6s; }
+.network-flow { fill:none; stroke:currentColor; stroke-width:2; stroke-dasharray:4 18; animation:network-flow 6s linear infinite; opacity:.6; }
+.focus-controls { display:flex; align-items:center; gap:14px; flex-wrap:wrap; font-size:12px; color:var(--muted); }
+#motion-toggle { border:1px solid var(--line); border-radius:20px; padding:5px 10px; background:var(--bg); color:var(--muted); font:inherit; font-size:11px; cursor:pointer; }
+#motion-toggle:hover { color:var(--link); border-color:var(--link); }
+.focus-card { transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease; }
+.profile-links a,.pub-button { transition:background .2s ease,color .2s ease,border-color .2s ease; }
+.focus-card:focus-within { border-color:var(--link); }
+@media(hover:hover) and (prefers-reduced-motion:no-preference) {
+ .focus-card:hover { transform:translateY(-5px); border-color:var(--link); box-shadow:0 12px 28px #454b9210; }
+}
+@keyframes orbit-ring { to { transform:rotate(360deg); } }
+@keyframes tool-packet { 0%,10% { transform:translateX(0); opacity:0; } 20%,75% { opacity:.9; } 90%,100% { transform:translateX(28px); opacity:0; } }
+@keyframes node-breathe { 0%,100% { opacity:.45; } 50% { opacity:1; } }
+@keyframes trace-curve { 0%,10% { stroke-dashoffset:100; } 65%,100% { stroke-dashoffset:0; } }
+@keyframes bar-rise { 0%,100% { transform:scaleY(.7); } 60% { transform:scaleY(1); } }
+@keyframes network-flow { to { stroke-dashoffset:-88; } }
+[data-motion="paused"] .research-motion *,[data-offscreen] .research-motion *,[data-page-hidden] .research-motion * { animation-play-state:paused!important; }
+[data-motion="paused"] .focus-card { transition:none; transform:none; }
+@media(prefers-reduced-motion:reduce) { .research-motion * { animation:none!important; } .focus-card,.profile-links a,.pub-button { transition:none; } }
+@media(max-width:700px) { .research-motion { max-width:240px; align-self:center; } }
+@media print { .research-motion * { animation:none!important; } .focus-controls { display:none; } }

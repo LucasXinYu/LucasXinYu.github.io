@@ -42,3 +42,35 @@
   update();
   revealLinkedPaper();
 })();
+
+(function () {
+  'use strict';
+  const toggle = document.getElementById('motion-toggle');
+  if (!toggle) return;
+  const root = document.documentElement;
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let paused = false;
+  try { paused = localStorage.getItem('homepage-motion') === 'paused'; } catch (_) {}
+  function sync() {
+    root.dataset.motion = paused || reduced.matches ? 'paused' : 'running';
+    toggle.hidden = reduced.matches;
+    toggle.setAttribute('aria-pressed', String(paused));
+    toggle.textContent = paused ? 'Play animations' : 'Pause animations';
+  }
+  toggle.addEventListener('click', function () {
+    paused = !paused;
+    try { localStorage.setItem('homepage-motion', paused ? 'paused' : 'running'); } catch (_) {}
+    sync();
+  });
+  reduced.addEventListener('change', sync);
+  sync();
+  function visibility() { root.toggleAttribute('data-page-hidden', document.hidden); }
+  document.addEventListener('visibilitychange', visibility);
+  visibility();
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(function (entries) {
+      entries.forEach(entry => entry.target.toggleAttribute('data-offscreen', !entry.isIntersecting));
+    });
+    document.querySelectorAll('.focus-card').forEach(card => observer.observe(card));
+  }
+})();
