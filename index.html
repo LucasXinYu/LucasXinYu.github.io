@@ -36,7 +36,7 @@
 
 <link rel="stylesheet" href="Source_files/font-awesome-4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="Source_files/academic.css?v=4">
-<link rel="stylesheet" href="research-focus.css?v=20261107-2">
+<link rel="stylesheet" href="research-focus.css?v=20261107-3">
 <title>Xin Yu</title>
 </head>
 <body>
@@ -79,7 +79,7 @@
 <p>My research interests include <strong>statistical machine learning</strong>, with a focus on interpretability, generalization, and robustness; and <strong>post-training of foundation models</strong>, including infrastructure efficiency, reasoning, recursive self-improvement, agentic quality, and human alignment.</p>
 </div></section>
 <section id="focus" aria-labelledby="focus-title">
-<div class="section-heading"><h2 id="focus-title">Research Focus</h2><div class="focus-controls"><span>Ideas behind the work</span><button id="motion-toggle" type="button" aria-pressed="false" hidden>Pause animations</button></div></div>
+<div class="section-heading"><h2 id="focus-title">Research Focus</h2><div class="focus-controls"><span>Research directions &amp; related papers</span><button id="motion-toggle" type="button" aria-pressed="false" hidden>Pause animations</button></div></div>
 <div class="focus-grid">
 <article class="focus-card focus-rsi">
   <svg class="research-motion motion-self-improvement" viewBox="0 0 240 160" role="img" aria-labelledby="focus-rsi-title focus-rsi-desc" focusable="false">
@@ -126,9 +126,15 @@
     <circle class="rf-dot rf-status" cx="120" cy="29" r="2.5"/>
   </svg>
   <span class="focus-number">01 / SELF-IMPROVING AGENTS</span>
-  <h3>Recursive<br>Self-Improvement</h3>
+  <h3>Recursive Self-Improvement</h3>
   <p>Autonomous agents that evaluate their own work, retain useful experience, and improve their workflows across tasks.</p>
-  <a href="#paper-harness-rsi">Explore Harness RSI <span aria-hidden="true">↗</span></a>
+  <div class="focus-papers">
+    <h4>Related papers</h4>
+    <ul>
+      <li><a href="#paper-harness-rsi">From Harness Optimization to Recursive Self-Improvement: A Survey of Language Model Agents <span aria-hidden="true">↗</span></a></li>
+      <li><a href="#paper-mltoolbench">MLToolBench: Learning Tool-Augmented Agents for Machine Learning Development <span aria-hidden="true">↗</span></a></li>
+    </ul>
+  </div>
 </article>
 <article class="focus-card focus-multimodal">
   <svg class="research-motion motion-multimodal" viewBox="0 0 240 160" role="img" aria-labelledby="focus-mm-title focus-mm-desc" focusable="false">
@@ -177,62 +183,14 @@
     <text class="rf-note" x="123" y="143">Visual + textual evidence</text>
   </svg>
   <span class="focus-number">02 / VISION &amp; LANGUAGE</span>
-  <h3>Multimodal<br>Understanding</h3>
+  <h3>Multimodal Understanding</h3>
   <p>Models that connect visual and textual evidence to extract structured information and reason about real-world content.</p>
-  <a href="#paper-pbsd">Explore self-distillation <span aria-hidden="true">↗</span></a>
-</article>
-<article class="focus-card focus-correction">
-  <svg class="research-motion motion-correction" viewBox="0 0 240 160" role="img" aria-labelledby="focus-correction-title focus-correction-desc" focusable="false">
-    <title id="focus-correction-title">Turn failures into testable improvements</title>
-    <desc id="focus-correction-desc">Audit failure cases to improve the data engine and agent harness, then evaluate the updated system again.</desc>
-    <defs>
-      <radialGradient id="correction-glow"><stop stop-color="var(--focus-accent)" stop-opacity=".12"/><stop offset="1" stop-color="var(--focus-accent)" stop-opacity="0"/></radialGradient>
-      <linearGradient id="correction-panel" x2="1" y2="1"><stop stop-color="var(--focus-accent)" stop-opacity=".13"/><stop offset="1" stop-color="var(--focus-secondary)" stop-opacity=".03"/></linearGradient>
-      <pattern id="correction-grid" width="16" height="16" patternUnits="userSpaceOnUse"><circle class="rf-grid" cx="8" cy="8" r=".6"/></pattern>
-    </defs>
-    <rect width="240" height="160" fill="url(#correction-grid)"/>
-    <ellipse cx="130" cy="78" rx="105" ry="70" fill="url(#correction-glow)"/>
-    <circle class="rf-ambient" cx="110" cy="78" r="32"/>
-    <path class="rf-rail" d="M59 78H88M132 78H144Q149 78 149 73V41Q149 36 154 36H167M144 78Q149 78 149 83V105Q149 110 154 110H167M227 36H230Q235 36 235 41V147Q235 154 228 154H44Q37 154 37 147V100M227 110H235"/>
-    <path class="rf-trace" pathLength="100" d="M59 78H88"/>
-    <path class="rf-trace" pathLength="100" d="M132 78H144Q149 78 149 73V41Q149 36 154 36H167"/>
-    <path class="rf-trace rf-trace-second" pathLength="100" d="M132 78H144Q149 78 149 83V105Q149 110 154 110H167"/>
-    <path class="rf-trace rf-trace-slow" pathLength="100" d="M227 36H230Q235 36 235 41V147Q235 154 228 154H44Q37 154 37 147V100"/>
-    <path class="rf-icon" d="m80 75 4 3-4 3m79-45 4 3-4 3M159 107l4 3-4 3M34 106l3-4 3 4" opacity=".65"/>
-    <g class="rf-node">
-      <rect class="rf-surface" x="15" y="56" width="44" height="44" rx="10"/>
-      <rect x="15" y="56" width="44" height="44" rx="10" fill="url(#correction-panel)"/>
-      <path class="rf-icon" d="m37 65 13 23H24ZM37 73v6m0 5v.5"/>
-    </g>
-    <text class="rf-label" x="37" y="115">Failures</text>
-    <g class="rf-node">
-      <rect class="rf-surface" x="88" y="56" width="44" height="44" rx="12"/>
-      <rect x="88" y="56" width="44" height="44" rx="12" fill="url(#correction-panel)"/>
-      <rect class="rf-highlight" x="88" y="56" width="44" height="44" rx="12"/>
-      <g class="rf-scan"><circle class="rf-icon" cx="107" cy="75" r="8"/><path class="rf-icon" d="m113 81 8 8M104 75h6m-3-3v6"/></g>
-    </g>
-    <text class="rf-label" x="110" y="115">Audit</text>
-    <g class="rf-node">
-      <rect class="rf-surface" x="167" y="17" width="60" height="39" rx="10"/>
-      <rect x="167" y="17" width="60" height="39" rx="10" fill="url(#correction-panel)"/>
-      <rect class="rf-highlight rf-stage-two" x="167" y="17" width="60" height="39" rx="10"/>
-      <ellipse class="rf-icon" cx="197" cy="28" rx="12" ry="4"/><path class="rf-icon" d="M185 28v16c0 6 24 6 24 0V28m-24 8c0 6 24 6 24 0"/>
-    </g>
-    <text class="rf-label" x="197" y="70">Data engine</text>
-    <g class="rf-node">
-      <rect class="rf-surface" x="167" y="90" width="60" height="39" rx="10"/>
-      <rect x="167" y="90" width="60" height="39" rx="10" fill="url(#correction-panel)"/>
-      <rect class="rf-highlight rf-stage-three" x="167" y="90" width="60" height="39" rx="10"/>
-      <path class="rf-icon" d="M182 102h30m-30 8h30m-30 8h30"/>
-      <g class="rf-surface"><circle cx="191" cy="102" r="3"/><circle cx="204" cy="110" r="3"/><circle cx="194" cy="118" r="3"/></g>
-    </g>
-    <text class="rf-label" x="197" y="144">Harness</text>
-    <text class="rf-note" x="93" y="144">Re-evaluate</text>
-  </svg>
-  <span class="focus-number">03 / DATA &amp; HARNESSES</span>
-  <h3>Failure-Driven<br>Correction</h3>
-  <p>Turning failure trajectories into targeted training data, diagnostic tools, and harness improvements that can be tested.</p>
-  <a href="#paper-mltoolbench">Explore MLToolBench <span aria-hidden="true">↗</span></a>
+  <div class="focus-papers">
+    <h4>Related papers</h4>
+    <ul>
+      <li><a href="#paper-pbsd">Preference-Based Self-Distillation: Beyond KL Matching via Reward Regularization <span aria-hidden="true">↗</span></a></li>
+    </ul>
+  </div>
 </article>
 </div></section>
 <section id="news" aria-labelledby="news-title"><h2 id="news-title">News</h2><ul class="news-list"><li><time datetime="2026-10-20">2026-10-20</time><div> I was honored to receive a <em>Google Peer Bonus</em>. ✨</div></li>

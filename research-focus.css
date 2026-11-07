@@ -1,4 +1,16 @@
-/* Research focus: animated SVG diagrams, using the existing motion controls. */
+/* Two research directions, with animated diagrams and related publications. */
+#focus .focus-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; }
+#focus .focus-card { padding:26px; }
+#focus .focus-number { color:var(--focus-accent); }
+#focus .focus-card h3 { font-size:19px; }
+#focus .focus-card p { margin-bottom:0; }
+#focus .focus-papers { margin-top:22px; padding-top:18px; border-top:1px solid var(--line); }
+#focus .focus-papers h4 { margin:0 0 12px; font-size:10px; font-weight:650; letter-spacing:1.2px; text-transform:uppercase; color:var(--muted); }
+#focus .focus-papers ul { list-style:none; padding:0; margin:0; display:grid; gap:14px; }
+#focus .focus-papers a { display:block; font-size:13px; line-height:1.6; font-weight:550; color:var(--focus-accent); text-decoration:none; }
+#focus .focus-papers a:hover { text-decoration:underline; text-underline-offset:3px; }
+#focus .focus-papers a:focus-visible { outline:2px solid var(--focus-accent); outline-offset:4px; border-radius:2px; }
+#focus .focus-papers a span { display:inline-block; white-space:nowrap; }
 #focus .focus-card {
   --focus-accent:#6961c9;
   --focus-secondary:#9990ee;
@@ -8,16 +20,12 @@
   box-shadow:0 3px 14px #15171b03;
 }
 #focus .focus-multimodal { --focus-accent:#207f88; --focus-secondary:#60b8b2; }
-#focus .focus-correction { --focus-accent:#b26847; --focus-secondary:#e4aa79; }
 [data-theme="dark"] #focus .focus-card { --focus-accent:#b0a6fa; --focus-secondary:#d4baff; }
 [data-theme="dark"] #focus .focus-multimodal { --focus-accent:#78cec7; --focus-secondary:#a0e6dc; }
-[data-theme="dark"] #focus .focus-correction { --focus-accent:#edaf8a; --focus-secondary:#f7d49c; }
-#focus .focus-number,#focus .focus-card>a { color:var(--focus-accent); }
-#focus .focus-card>a { display:flex; align-items:center; gap:5px; }
-#focus .focus-card>a span { transition:transform .2s ease; }
-#focus .focus-card>a:hover span { transform:translate(2px,-2px); }
 #focus .research-motion {
   aspect-ratio:240/160;
+  max-width:280px;
+  align-self:center;
   margin-bottom:22px;
   color:var(--focus-accent);
   overflow:visible;
@@ -66,7 +74,6 @@
 .rf-output-line { stroke-dasharray:30; stroke-dashoffset:0; animation:rf-write 5s ease-in-out infinite; }
 .rf-output-line:nth-child(2) { animation-delay:.3s; }
 .rf-output-line:nth-child(3) { animation-delay:.6s; }
-.rf-scan { transform-box:fill-box; transform-origin:center; animation:rf-scan 6s ease-in-out infinite; }
 @keyframes rf-travel { 0% { stroke-dashoffset:100; opacity:0; } 8%,88% { opacity:.9; } 100% { stroke-dashoffset:0; opacity:0; } }
 @keyframes rf-highlight { 0%,65%,100% { opacity:.15; } 20%,40% { opacity:.8; } }
 @keyframes rf-status { 0%,100% { opacity:.4; } 50% { opacity:1; } }
@@ -75,7 +82,6 @@
 @keyframes rf-float { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-2px); } }
 @keyframes rf-token { 0%,100% { opacity:.25; transform:scale(.88); } 50% { opacity:.8; transform:scale(1); } }
 @keyframes rf-write { 0%,15% { stroke-dashoffset:30; opacity:.3; } 55%,90% { stroke-dashoffset:0; opacity:1; } 100% { stroke-dashoffset:0; opacity:.3; } }
-@keyframes rf-scan { 0%,100% { transform:translateX(-2px); } 50% { transform:translateX(2px); } }
 @media(hover:hover) and (prefers-reduced-motion:no-preference) {
   #focus .focus-card:hover { border-color:var(--focus-accent); box-shadow:0 12px 30px color-mix(in srgb,var(--focus-accent) 10%,transparent); transform:translateY(-4px); }
 }
@@ -85,9 +91,9 @@
 #focus [data-offscreen] .research-motion * { animation-play-state:paused!important; }
 [data-motion="paused"] #focus .focus-card { transform:none; }
 @media(prefers-reduced-motion:reduce) {
+  #focus .focus-card { transition:none; }
   #focus .research-motion * { animation:none!important; }
   #focus .rf-trace { opacity:.6; stroke-dashoffset:45; }
-  #focus .focus-card,#focus .focus-card>a span { transition:none; }
 }
-@media(max-width:700px) { #focus .research-motion { max-width:280px; align-self:center; } }
+@media(max-width:700px) { #focus .focus-grid { grid-template-columns:1fr; } #focus .focus-card { padding:22px; } }
 @media print { #focus .research-motion * { animation:none!important; } }
