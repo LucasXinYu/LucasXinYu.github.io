@@ -80,9 +80,79 @@
 <section id="focus" aria-labelledby="focus-title">
 <div class="section-heading"><h2 id="focus-title">Research Focus</h2><div class="focus-controls"><span>Ideas behind the work</span><button id="motion-toggle" type="button" aria-pressed="false" hidden>Pause animations</button></div></div>
 <div class="focus-grid">
-<article class="focus-card"><svg class="research-motion motion-agent" viewBox="0 0 240 130" aria-hidden="true" focusable="false"><path class="motion-track" d="M52 65H188M120 33V97"/><circle class="motion-ring" cx="120" cy="65" r="38"/><rect class="motion-node" x="95" y="44" width="50" height="42" rx="13"/><path class="motion-ink" d="m108 62 6 4-6 4m14 0h10"/><g class="motion-satellite"><rect class="motion-node" x="20" y="48" width="33" height="34" rx="8"/><path class="motion-ink" d="M30 58h13m-13 7h9m-9 7h13"/></g><rect class="motion-node" x="187" y="48" width="33" height="34" rx="8"/><path class="motion-ink" d="m196 65 5 5 10-11"/><circle class="motion-packet packet-one" cx="59" cy="65" r="3"/><circle class="motion-packet packet-two" cx="151" cy="65" r="3"/><circle class="motion-dot" cx="120" cy="25" r="4"/><circle class="motion-dot" cx="120" cy="105" r="4"/></svg><span class="focus-number">01 / AGENTS</span><h3>Learning to use tools</h3><p>Tool-augmented agents for machine learning development, reasoning, and agentic quality.</p><a href="#paper-mltoolbench">Explore MLToolBench <span aria-hidden="true">↗</span></a></article>
-<article class="focus-card"><svg class="research-motion motion-training" viewBox="0 0 240 130" aria-hidden="true" focusable="false"><path class="motion-track" d="M25 102H218M25 102V20M25 76H218M25 50H218"/><path class="motion-curve" pathLength="100" d="M32 90C62 90 56 65 91 65S119 40 145 40 172 25 208 25"/><g class="motion-bars"><rect x="42" y="78" width="15" height="24" rx="3"/><rect x="77" y="64" width="15" height="38" rx="3"/><rect x="112" y="49" width="15" height="53" rx="3"/><rect x="147" y="35" width="15" height="67" rx="3"/><rect x="182" y="22" width="15" height="80" rx="3"/></g><circle class="motion-dot" cx="208" cy="25" r="5"/></svg><span class="focus-number">02 / POST-TRAINING</span><h3>Improving foundation models</h3><p>Preference optimization, self-distillation, and efficient adaptation of foundation models.</p><a href="#paper-pbsd">Explore preference-based self-distillation <span aria-hidden="true">↗</span></a></article>
-<article class="focus-card"><svg class="research-motion motion-network" viewBox="0 0 240 130" aria-hidden="true" focusable="false"><path class="motion-track" d="M40 36 120 65 199 33M40 96 120 65 198 100M120 65V18M120 65V113"/><path class="network-flow" d="M40 36 120 65 199 33M40 96 120 65 198 100"/><circle class="motion-ring" cx="120" cy="65" r="29"/><circle class="motion-node" cx="120" cy="65" r="18"/><path class="motion-ink" d="M113 65h14m-7-7v14"/><circle class="motion-node" cx="40" cy="36" r="10"/><circle class="motion-node" cx="199" cy="33" r="10"/><circle class="motion-node" cx="40" cy="96" r="10"/><circle class="motion-node" cx="198" cy="100" r="10"/><circle class="motion-dot" cx="120" cy="18" r="4"/><circle class="motion-dot" cx="120" cy="113" r="4"/></svg><span class="focus-number">03 / FOUNDATIONS</span><h3>Understanding learning</h3><p>Statistical accuracy, communication efficiency, and the principles behind reliable machine learning.</p><a href="#paper-fedclup">Explore personalized federated learning <span aria-hidden="true">↗</span></a></article>
+<article class="focus-card">
+  <svg class="research-motion motion-self-improvement" viewBox="0 0 240 130" role="img" aria-labelledby="focus-rsi-title focus-rsi-desc" focusable="false">
+    <title id="focus-rsi-title">An agent improves its own workflow</title>
+    <desc id="focus-rsi-desc">Act, evaluate, and improve form a loop. Useful experience is retained in memory for the next iteration.</desc>
+    <path class="motion-track" d="M70 53H89M151 53H170M201 76V105H39V76"/>
+    <path class="network-flow" d="M201 76V105H39V76"/>
+    <path class="motion-ink" d="m82 49 5 4-5 4m81-8 5 4-5 4M35 83l4-6 4 6"/>
+    <rect class="motion-node" x="8" y="26" width="62" height="51" rx="9"/>
+    <rect class="motion-node" x="89" y="26" width="62" height="51" rx="9"/>
+    <rect class="motion-node" x="170" y="26" width="62" height="51" rx="9"/>
+    <path class="motion-ink" d="m29 39 7 5-7 5m13 0h9M110 44l6 6 13-14M192 47l6-6 5 4 8-10m-5 0h5v5"/>
+    <g fill="currentColor" font-family="inherit" font-size="10" font-weight="600" text-anchor="middle">
+      <text x="39" y="66">Act</text><text x="120" y="66">Evaluate</text><text x="201" y="66">Improve</text>
+    </g>
+    <rect class="motion-node" x="82" y="94" width="76" height="22" rx="11"/>
+    <text x="120" y="109" fill="currentColor" font-family="inherit" font-size="10" text-anchor="middle">Memory</text>
+  </svg>
+  <span class="focus-number">01 / SELF-IMPROVING AGENTS</span>
+  <h3>Recursive<br>Self-Improvement</h3>
+  <p>Autonomous agents that evaluate their own work, retain useful experience, and improve their workflows across tasks.</p>
+  <a href="#paper-harness-rsi">Explore Harness RSI <span aria-hidden="true">↗</span></a>
+</article>
+<article class="focus-card">
+  <svg class="research-motion motion-multimodal" viewBox="0 0 240 130" role="img" aria-labelledby="focus-mm-title focus-mm-desc" focusable="false">
+    <title id="focus-mm-title">Understand images and text together</title>
+    <desc id="focus-mm-desc">Visual and textual evidence feed a shared model, which extracts structured information.</desc>
+    <path class="motion-track" d="M60 37H73V65H86M60 93H73V65M156 65H177"/>
+    <path class="network-flow" d="M60 37H73V65H86M60 93H73V65M156 65H177"/>
+    <path class="motion-ink" d="m79 61 5 4-5 4m90-8 6 4-6 4"/>
+    <rect class="motion-node" x="8" y="15" width="52" height="44" rx="8"/>
+    <path class="motion-ink" d="M19 44l10-12 8 9 6-7 7 10Z"/><circle class="motion-dot" cx="43" cy="27" r="3"/>
+    <rect class="motion-node" x="8" y="71" width="52" height="44" rx="8"/>
+    <path class="motion-ink" d="M20 83h28m-28 10h20m-20 10h25"/>
+    <rect class="motion-node" x="86" y="39" width="70" height="52" rx="11"/>
+    <path class="motion-ink" d="M108 55l13-7 13 7-13 7Zm0 7 13 7 13-7"/>
+    <text x="121" y="82" fill="currentColor" font-family="inherit" font-size="10" font-weight="600" text-anchor="middle">Understand</text>
+    <rect class="motion-node" x="178" y="39" width="54" height="52" rx="8"/>
+    <path class="motion-ink" d="M188 51h5m5 0h23m-33 12h5m5 0h17m-27 12h5m5 0h21"/>
+    <g fill="currentColor" font-family="inherit" font-size="9.5" text-anchor="middle">
+      <text x="121" y="111">Joint reasoning</text><text x="205" y="107">Structured</text><text x="205" y="119">output</text>
+    </g>
+  </svg>
+  <span class="focus-number">02 / VISION &amp; LANGUAGE</span>
+  <h3>Multimodal<br>Understanding</h3>
+  <p>Models that connect visual and textual evidence to extract structured information and reason about real-world content.</p>
+  <a href="#paper-pbsd">Explore self-distillation <span aria-hidden="true">↗</span></a>
+</article>
+<article class="focus-card">
+  <svg class="research-motion motion-correction" viewBox="0 0 240 130" role="img" aria-labelledby="focus-correction-title focus-correction-desc" focusable="false">
+    <title id="focus-correction-title">Turn failures into testable improvements</title>
+    <desc id="focus-correction-desc">Audit failure cases to improve the data engine and agent harness, then evaluate the updated system again.</desc>
+    <path class="motion-track" d="M66 61H85M135 61H145V30H158M145 61V92H158M227 30H237V124H37V84M227 92H237"/>
+    <path class="network-flow" d="M135 61H145V30H158M145 61V92H158M227 30H237V124H37V84M227 92H237"/>
+    <path class="motion-ink" d="m78 57 5 4-5 4M151 26l5 4-5 4M151 88l5 4-5 4M33 90l4-5 4 5"/>
+    <rect class="motion-node" x="8" y="39" width="58" height="45" rx="8"/>
+    <path class="motion-ink" d="M37 47v9m0 5v1"/>
+    <text x="37" y="76" fill="currentColor" font-family="inherit" font-size="10" font-weight="600" text-anchor="middle">Failures</text>
+    <rect class="motion-node" x="86" y="39" width="49" height="45" rx="8"/>
+    <circle class="motion-ink" cx="108" cy="53" r="6"/><path class="motion-ink" d="m113 58 5 5"/>
+    <text x="110.5" y="76" fill="currentColor" font-family="inherit" font-size="10" font-weight="600" text-anchor="middle">Audit</text>
+    <rect class="motion-node" x="159" y="12" width="68" height="36" rx="8"/>
+    <rect class="motion-node" x="159" y="74" width="68" height="36" rx="8"/>
+    <g fill="currentColor" font-family="inherit" font-size="10" font-weight="600" text-anchor="middle">
+      <text x="193" y="27">Data</text><text x="193" y="39">engine</text>
+      <text x="193" y="89">Harness</text><text x="193" y="101">optimization</text>
+    </g>
+    <text x="101" y="114" fill="currentColor" font-family="inherit" font-size="9.5" text-anchor="middle">Re-evaluate</text>
+  </svg>
+  <span class="focus-number">03 / DATA &amp; HARNESSES</span>
+  <h3>Failure-Driven<br>Correction</h3>
+  <p>Turning failure trajectories into targeted training data, diagnostic tools, and harness improvements that can be tested.</p>
+  <a href="#paper-mltoolbench">Explore MLToolBench <span aria-hidden="true">↗</span></a>
+</article>
 </div></section>
 <section id="news" aria-labelledby="news-title"><h2 id="news-title">News</h2><ul class="news-list"><li><time datetime="2026-10-20">2026-10-20</time><div> I was honored to receive a <em>Google Peer Bonus</em>. ✨</div></li>
 <li><time>2026-10-16</time><div> I’ll be attending <em>NeurIPS 2026</em> at the Atlanta satellite venue this December and would be happy to connect for a coffee chat—feel free to reach out. ☕</div></li>
