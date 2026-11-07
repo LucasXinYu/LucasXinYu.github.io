@@ -1,0 +1,93 @@
+/* Research focus: animated SVG diagrams, using the existing motion controls. */
+#focus .focus-card {
+  --focus-accent:#6961c9;
+  --focus-secondary:#9990ee;
+  position:relative;
+  border-radius:16px;
+  background:linear-gradient(155deg,color-mix(in srgb,var(--focus-accent) 6%,var(--bg)),var(--bg) 76%);
+  box-shadow:0 3px 14px #15171b03;
+}
+#focus .focus-multimodal { --focus-accent:#207f88; --focus-secondary:#60b8b2; }
+#focus .focus-correction { --focus-accent:#b26847; --focus-secondary:#e4aa79; }
+[data-theme="dark"] #focus .focus-card { --focus-accent:#b0a6fa; --focus-secondary:#d4baff; }
+[data-theme="dark"] #focus .focus-multimodal { --focus-accent:#78cec7; --focus-secondary:#a0e6dc; }
+[data-theme="dark"] #focus .focus-correction { --focus-accent:#edaf8a; --focus-secondary:#f7d49c; }
+#focus .focus-number,#focus .focus-card>a { color:var(--focus-accent); }
+#focus .focus-card>a { display:flex; align-items:center; gap:5px; }
+#focus .focus-card>a span { transition:transform .2s ease; }
+#focus .focus-card>a:hover span { transform:translate(2px,-2px); }
+#focus .research-motion {
+  aspect-ratio:240/160;
+  margin-bottom:22px;
+  color:var(--focus-accent);
+  overflow:visible;
+}
+.rf-grid { fill:currentColor; opacity:.1; }
+.rf-ambient { fill:currentColor; opacity:.05; animation:rf-breathe 8s ease-in-out infinite; }
+.rf-rail { fill:none; stroke:currentColor; stroke-width:1.15; opacity:.25; stroke-linecap:round; stroke-linejoin:round; }
+.rf-trace {
+  fill:none; stroke:currentColor; stroke-width:2.3; stroke-linecap:round;
+  stroke-dasharray:7 93; stroke-dashoffset:100;
+  filter:drop-shadow(0 0 3px currentColor);
+  animation:rf-travel 5s linear infinite;
+}
+.rf-trace-slow { animation-duration:8s; }
+.rf-trace-second { animation-delay:-2.5s; stroke:var(--focus-secondary); }
+.rf-surface { fill:var(--bg); stroke:currentColor; stroke-width:1; stroke-opacity:.5; }
+.rf-tint { fill:currentColor; opacity:.06; }
+.rf-node { filter:drop-shadow(0 3px 5px #15171b08); }
+.rf-highlight {
+  fill:none; stroke:currentColor; stroke-width:1.6; opacity:.25;
+  animation:rf-highlight 6s ease-in-out infinite;
+}
+.rf-stage-two { animation-delay:-4s; }
+.rf-stage-three { animation-delay:-2s; }
+.rf-icon { fill:none; stroke:currentColor; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+.rf-icon-soft { stroke:var(--focus-secondary); }
+.rf-label { fill:currentColor; font:600 10.5px system-ui,sans-serif; text-anchor:middle; }
+.rf-note { fill:var(--muted); font:9px system-ui,sans-serif; text-anchor:middle; }
+.rf-dot { fill:currentColor; }
+.rf-status { animation:rf-status 4s ease-in-out infinite; }
+.rf-halo { fill:none; stroke:currentColor; stroke-width:.8; opacity:.2; }
+.rf-orbit {
+  fill:none; stroke:currentColor; stroke-width:1; stroke-dasharray:2 9; opacity:.35;
+  transform-origin:120px 72px;
+  animation:rf-orbit 32s linear infinite;
+}
+.rf-float { animation:rf-float 6s ease-in-out infinite; }
+.rf-float-second { animation-delay:-3s; }
+.rf-token {
+  fill:currentColor; transform-box:fill-box; transform-origin:center;
+  animation:rf-token 4s ease-in-out infinite;
+}
+.rf-token:nth-child(2) { animation-delay:-1s; }
+.rf-token:nth-child(3) { animation-delay:-2s; }
+.rf-token:nth-child(4) { animation-delay:-3s; }
+.rf-output-line { stroke-dasharray:30; stroke-dashoffset:0; animation:rf-write 5s ease-in-out infinite; }
+.rf-output-line:nth-child(2) { animation-delay:.3s; }
+.rf-output-line:nth-child(3) { animation-delay:.6s; }
+.rf-scan { transform-box:fill-box; transform-origin:center; animation:rf-scan 6s ease-in-out infinite; }
+@keyframes rf-travel { 0% { stroke-dashoffset:100; opacity:0; } 8%,88% { opacity:.9; } 100% { stroke-dashoffset:0; opacity:0; } }
+@keyframes rf-highlight { 0%,65%,100% { opacity:.15; } 20%,40% { opacity:.8; } }
+@keyframes rf-status { 0%,100% { opacity:.4; } 50% { opacity:1; } }
+@keyframes rf-breathe { 0%,100% { opacity:.035; } 50% { opacity:.08; } }
+@keyframes rf-orbit { to { transform:rotate(360deg); } }
+@keyframes rf-float { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-2px); } }
+@keyframes rf-token { 0%,100% { opacity:.25; transform:scale(.88); } 50% { opacity:.8; transform:scale(1); } }
+@keyframes rf-write { 0%,15% { stroke-dashoffset:30; opacity:.3; } 55%,90% { stroke-dashoffset:0; opacity:1; } 100% { stroke-dashoffset:0; opacity:.3; } }
+@keyframes rf-scan { 0%,100% { transform:translateX(-2px); } 50% { transform:translateX(2px); } }
+@media(hover:hover) and (prefers-reduced-motion:no-preference) {
+  #focus .focus-card:hover { border-color:var(--focus-accent); box-shadow:0 12px 30px color-mix(in srgb,var(--focus-accent) 10%,transparent); transform:translateY(-4px); }
+}
+/* Pausing, offscreen suspension and reduced motion also cover every new effect. */
+[data-motion="paused"] #focus .research-motion *,
+[data-page-hidden] #focus .research-motion *,
+#focus [data-offscreen] .research-motion * { animation-play-state:paused!important; }
+[data-motion="paused"] #focus .focus-card { transform:none; }
+@media(prefers-reduced-motion:reduce) {
+  #focus .research-motion * { animation:none!important; }
+  #focus .rf-trace { opacity:.6; stroke-dashoffset:45; }
+  #focus .focus-card,#focus .focus-card>a span { transition:none; }
+}
+@media(max-width:700px) { #focus .research-motion { max-width:280px; align-self:center; } }
+@media print { #focus .research-motion * { animation:none!important; } }
