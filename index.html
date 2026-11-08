@@ -36,7 +36,7 @@
 
 <link rel="stylesheet" href="Source_files/font-awesome-4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="Source_files/academic.css?v=4">
-<link rel="stylesheet" href="research-focus.css?v=20261107-3">
+<link rel="stylesheet" href="research-focus.css?v=20261107-4">
 <title>Xin Yu</title>
 </head>
 <body>
@@ -82,48 +82,60 @@
 <div class="section-heading"><h2 id="focus-title">Research Focus</h2><div class="focus-controls"><span>Research directions &amp; related papers</span><button id="motion-toggle" type="button" aria-pressed="false" hidden>Pause animations</button></div></div>
 <div class="focus-grid">
 <article class="focus-card focus-rsi">
-  <svg class="research-motion motion-self-improvement" viewBox="0 0 240 160" role="img" aria-labelledby="focus-rsi-title focus-rsi-desc" focusable="false">
-    <title id="focus-rsi-title">An agent improves its own workflow</title>
-    <desc id="focus-rsi-desc">Act, evaluate, and improve form a loop. Useful experience is retained in memory for the next iteration.</desc>
+  <svg class="research-motion motion-self-improvement" viewBox="0 0 360 224" role="img" aria-labelledby="focus-rsi-title focus-rsi-desc" focusable="false">
+    <title id="focus-rsi-title">An agent learns from a failed check</title>
+    <desc id="focus-rsi-desc">An illustrative loop: the agent tries a task, receives a failed check, stores a lesson in memory, and uses that lesson on the next attempt.</desc>
     <defs>
-      <radialGradient id="rsi-glow"><stop stop-color="var(--focus-accent)" stop-opacity=".15"/><stop offset="1" stop-color="var(--focus-accent)" stop-opacity="0"/></radialGradient>
-      <linearGradient id="rsi-panel" x2="1" y2="1"><stop stop-color="var(--focus-accent)" stop-opacity=".16"/><stop offset="1" stop-color="var(--focus-secondary)" stop-opacity=".03"/></linearGradient>
-      <pattern id="rsi-grid" width="16" height="16" patternUnits="userSpaceOnUse"><circle class="rf-grid" cx="8" cy="8" r=".6"/></pattern>
+      <radialGradient id="rsi-aura"><stop stop-color="var(--focus-accent)" stop-opacity=".16"/><stop offset="1" stop-color="var(--focus-accent)" stop-opacity="0"/></radialGradient>
+      <linearGradient id="rsi-glass" x2="1" y2="1"><stop stop-color="var(--focus-accent)" stop-opacity=".13"/><stop offset="1" stop-color="var(--focus-accent)" stop-opacity=".02"/></linearGradient>
+      <pattern id="rsi-grid" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="9" cy="9" r=".65" fill="currentColor" opacity=".12"/></pattern>
     </defs>
-    <rect width="240" height="160" fill="url(#rsi-grid)"/>
-    <ellipse cx="120" cy="72" rx="90" ry="70" fill="url(#rsi-glow)"/>
-    <circle class="rf-ambient" cx="120" cy="72" r="42"/>
-    <circle class="rf-halo" cx="120" cy="72" r="35"/>
-    <circle class="rf-orbit" cx="120" cy="72" r="43"/>
-    <path class="rf-rail" d="M56 72H94M146 72H184M204 94V125Q204 132 197 132H43Q36 132 36 125V94"/>
-    <path class="rf-trace" pathLength="100" d="M56 72H184"/>
-    <path class="rf-trace rf-trace-slow" pathLength="100" d="M204 94V125Q204 132 197 132H43Q36 132 36 125V94"/>
-    <path class="rf-icon" d="m85 69 4 3-4 3m90-6 4 3-4 3M33 101l3-4 3 4" opacity=".65"/>
-    <g class="rf-node">
-      <rect class="rf-surface" x="16" y="50" width="40" height="44" rx="10"/>
-      <rect x="16" y="50" width="40" height="44" rx="10" fill="url(#rsi-panel)"/>
-      <rect class="rf-highlight" x="16" y="50" width="40" height="44" rx="10"/>
-      <path class="rf-icon" d="m26 65 7 6-7 6m13 0h8"/>
+    <rect width="360" height="224" fill="url(#rsi-grid)"/>
+    <ellipse cx="179" cy="100" rx="138" ry="103" fill="url(#rsi-aura)"/>
+    <g class="scene-steps"><text x="25" y="19">TRY</text><text x="148" y="19">REFLECT</text><text x="279" y="19">IMPROVE</text></g>
+    <path class="scene-rule" d="M25 29H101M148 29H224M279 29H335"/>
+    <path class="scene-phase phase-try" d="M25 29H101"/><path class="scene-phase phase-reflect" d="M148 29H224"/><path class="scene-phase phase-improve" d="M279 29H335"/>
+    <path class="scene-wire" d="M88 87H142M214 87H266M301 119V166Q301 172 295 172H234M128 172H111Q105 172 105 166V113Q105 107 111 107H142"/>
+    <path class="scene-signal rsi-send" pathLength="100" d="M88 87H142M214 87H266"/>
+    <path class="scene-signal rsi-learn" pathLength="100" d="M301 119V166Q301 172 295 172H234"/>
+    <path class="scene-signal rsi-return" pathLength="100" d="M128 172H111Q105 172 105 166V113Q105 107 111 107H142"/>
+    <path class="scene-arrow" d="m134 84 4 3-4 3m124-6 4 3-4 3m-20 82-4 3 4 3m-104-68 4 3-4 3"/>
+    <g class="scene-panel">
+      <rect class="scene-paper" x="20" y="51" width="68" height="72" rx="10"/>
+      <path class="scene-muted-line" d="M32 66H60M32 76H74M32 86H68"/>
+      <rect class="scene-task-tag" x="31" y="98" width="46" height="14" rx="4"/>
+      <text class="scene-tiny" x="54" y="108" text-anchor="middle">TASK</text>
     </g>
-    <g class="rf-node">
-      <rect class="rf-surface" x="94" y="44" width="52" height="56" rx="14"/>
-      <rect x="94" y="44" width="52" height="56" rx="14" fill="url(#rsi-panel)"/>
-      <rect class="rf-highlight rf-stage-two" x="94" y="44" width="52" height="56" rx="14"/>
-      <circle class="rf-halo" cx="120" cy="64" r="13"/>
-      <path class="rf-icon" d="m112 64 5 5 10-11"/>
-      <text class="rf-label" x="120" y="89">Evaluate</text>
+    <g class="scene-agent scene-panel">
+      <rect class="scene-paper" x="142" y="51" width="72" height="72" rx="19"/>
+      <rect x="142" y="51" width="72" height="72" rx="19" fill="url(#rsi-glass)"/>
+      <rect class="scene-agent-ring" x="136" y="45" width="84" height="84" rx="24"/>
+      <path class="scene-icon" d="m157 71 11 9-11 9"/>
+      <path class="scene-cursor" d="M179 89H194"/>
+      <text class="scene-label" x="178" y="110" text-anchor="middle">Agent</text>
     </g>
-    <g class="rf-node">
-      <rect class="rf-surface" x="184" y="50" width="40" height="44" rx="10"/>
-      <rect x="184" y="50" width="40" height="44" rx="10" fill="url(#rsi-panel)"/>
-      <rect class="rf-highlight rf-stage-three" x="184" y="50" width="40" height="44" rx="10"/>
-      <path class="rf-icon" d="M194 79v-6m7 6V68m7 11V63m-16 3 9-8 7 3 7-8m-5 0h5v5"/>
+    <g class="scene-panel">
+      <rect class="scene-paper" x="266" y="51" width="74" height="72" rx="10"/>
+      <text class="scene-small" x="278" y="68">Checks</text>
+      <path class="scene-muted-line" d="M291 82H328M291 98H320"/>
+      <path class="scene-ok" d="m276 81 3 3 5-6"/>
+      <g class="rsi-failure"><circle class="scene-warn-bg" cx="280" cy="98" r="7"/><path class="scene-warn" d="m277 95 6 6m0-6-6 6"/></g>
+      <path class="scene-ok rsi-success" d="m276 97 3 3 5-6"/>
+      <circle class="scene-placeholder rsi-pending" cx="280" cy="98" r="3"/>
     </g>
-    <text class="rf-label" x="36" y="109">Act</text><text class="rf-label" x="204" y="109">Improve</text>
-    <rect class="rf-surface" x="82" y="120" width="76" height="24" rx="12"/>
-    <path class="rf-icon rf-icon-soft" d="m91 130 6-3 6 3-6 3Zm0 4 6 3 6-3"/>
-    <text class="rf-label" x="127" y="136">Memory</text>
-    <circle class="rf-dot rf-status" cx="120" cy="29" r="2.5"/>
+    <g class="scene-memory scene-panel">
+      <rect class="scene-memory-back" x="134" y="156" width="94" height="37" rx="9"/>
+      <rect class="scene-paper" x="128" y="150" width="106" height="38" rx="9"/>
+      <path class="scene-icon" d="m140 163 8-4 8 4-8 4Zm0 5 8 4 8-4"/>
+      <text class="scene-label" x="164" y="167">Memory</text>
+      <text class="scene-micro" x="164" y="179">retain the lesson</text>
+      <rect class="rsi-memory-flash" x="128" y="150" width="106" height="38" rx="9"/>
+    </g>
+    <g class="scene-caption" text-anchor="middle">
+      <text class="rsi-caption-try" x="180" y="215">Try an approach.</text>
+      <text class="rsi-caption-learn" x="180" y="215">Turn a failed check into a lesson.</text>
+      <text class="rsi-caption-next" x="180" y="215">Use that lesson on the next attempt.</text>
+    </g>
   </svg>
   <span class="focus-number">01 / SELF-IMPROVING AGENTS</span>
   <h3>Recursive Self-Improvement</h3>
@@ -137,50 +149,60 @@
   </div>
 </article>
 <article class="focus-card focus-multimodal">
-  <svg class="research-motion motion-multimodal" viewBox="0 0 240 160" role="img" aria-labelledby="focus-mm-title focus-mm-desc" focusable="false">
-    <title id="focus-mm-title">Understand images and text together</title>
-    <desc id="focus-mm-desc">Visual and textual evidence converge in a shared model, which extracts structured information.</desc>
+  <svg class="research-motion motion-multimodal" viewBox="0 0 360 224" role="img" aria-labelledby="focus-mm-title focus-mm-desc" focusable="false">
+    <title id="focus-mm-title">From a product page to structured attributes</title>
+    <desc id="focus-mm-desc">Illustrative product extraction: a model connects an image of a blue shirt with the text Blue linen shirt and $39, then produces item, color, and price fields.</desc>
     <defs>
-      <radialGradient id="mm-glow"><stop stop-color="var(--focus-accent)" stop-opacity=".14"/><stop offset="1" stop-color="var(--focus-accent)" stop-opacity="0"/></radialGradient>
-      <linearGradient id="mm-panel" x2="1" y2="1"><stop stop-color="var(--focus-accent)" stop-opacity=".14"/><stop offset="1" stop-color="var(--focus-secondary)" stop-opacity=".02"/></linearGradient>
-      <pattern id="mm-grid" width="16" height="16" patternUnits="userSpaceOnUse"><circle class="rf-grid" cx="8" cy="8" r=".6"/></pattern>
+      <radialGradient id="mm-aura"><stop stop-color="var(--focus-accent)" stop-opacity=".15"/><stop offset="1" stop-color="var(--focus-accent)" stop-opacity="0"/></radialGradient>
+      <linearGradient id="mm-glass" x2="1" y2="1"><stop stop-color="var(--focus-accent)" stop-opacity=".14"/><stop offset="1" stop-color="var(--focus-accent)" stop-opacity=".02"/></linearGradient>
+      <pattern id="mm-grid" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="9" cy="9" r=".65" fill="currentColor" opacity=".12"/></pattern>
+      <clipPath id="mm-image-clip"><rect x="25" y="57" width="82" height="71" rx="6"/></clipPath>
     </defs>
-    <rect width="240" height="160" fill="url(#mm-grid)"/>
-    <ellipse cx="123" cy="75" rx="92" ry="70" fill="url(#mm-glow)"/>
-    <circle class="rf-ambient" cx="123" cy="75" r="43"/>
-    <circle class="rf-halo" cx="123" cy="75" r="37"/>
-    <path class="rf-rail" d="M64 42C83 42 75 75 92 75M64 110C83 110 75 75 92 75M154 75H181"/>
-    <path class="rf-trace" pathLength="100" d="M64 42C83 42 75 75 92 75"/>
-    <path class="rf-trace rf-trace-second" pathLength="100" d="M64 110C83 110 75 75 92 75"/>
-    <path class="rf-trace" pathLength="100" d="M154 75H181"/>
-    <g class="rf-float">
-      <rect class="rf-surface" x="16" y="23" width="48" height="38" rx="9"/>
-      <rect x="16" y="23" width="48" height="38" rx="9" fill="url(#mm-panel)"/>
-      <path class="rf-icon" d="m24 51 10-13 9 10 6-7 8 10Z"/>
-      <circle class="rf-dot rf-status" cx="50" cy="33" r="3"/>
+    <rect width="360" height="224" fill="url(#mm-grid)"/>
+    <ellipse cx="185" cy="102" rx="145" ry="102" fill="url(#mm-aura)"/>
+    <g class="scene-steps"><text x="17" y="19">OBSERVE</text><text x="145" y="19">CONNECT</text><text x="280" y="19">EXTRACT</text></g>
+    <path class="scene-rule" d="M17 29H94M145 29H222M280 29H344"/>
+    <path class="scene-phase phase-observe" d="M17 29H94"/><path class="scene-phase phase-connect" d="M145 29H222"/><path class="scene-phase phase-extract" d="M280 29H344"/>
+    <path class="scene-wire" d="M115 86C140 86 136 108 161 108M115 157C142 157 137 117 161 117M207 112H246"/>
+    <path class="scene-signal mm-visual-signal" pathLength="100" d="M115 86C140 86 136 108 161 108"/>
+    <path class="scene-signal mm-text-signal" pathLength="100" d="M115 157C142 157 137 117 161 117"/>
+    <path class="scene-signal mm-output-signal" pathLength="100" d="M207 112H246"/>
+    <g class="scene-panel">
+      <rect class="scene-paper" x="17" y="43" width="98" height="145" rx="11"/>
+      <circle class="scene-placeholder" cx="27" cy="50" r="1.3"/><circle class="scene-placeholder" cx="32" cy="50" r="1.3"/><circle class="scene-placeholder" cx="37" cy="50" r="1.3"/>
+      <rect class="scene-photo" x="25" y="57" width="82" height="71" rx="6"/>
+      <path class="scene-shirt" d="m52 66-16 9 8 13 8-5v33h28V83l8 5 8-13-16-9c-6 9-22 9-28 0Z"/>
+      <path class="scene-shirt-seam" d="M60 68q6 8 12 0M66 76v39"/>
+      <g clip-path="url(#mm-image-clip)"><rect class="mm-scan-wash" x="25" y="58" width="82" height="16"/><path class="mm-scan-line" d="M25 74H107"/></g>
+      <path class="mm-image-box" d="M40 71v-6h7m38 0h7v6m0 39v7h-7m-38 0h-7v-7"/>
+      <text class="scene-small" x="26" y="144">Blue linen shirt</text>
+      <rect class="mm-word-highlight" x="24" y="134" width="25" height="14" rx="3"/>
+      <text class="scene-price" x="26" y="165">$39</text>
+      <path class="mm-price-highlight" d="M26 170H49"/>
+      <path class="scene-muted-line" d="M26 178H62"/>
     </g>
-    <text class="rf-note" x="40" y="75">Image</text>
-    <g class="rf-float rf-float-second">
-      <rect class="rf-surface" x="16" y="91" width="48" height="38" rx="9"/>
-      <rect x="16" y="91" width="48" height="38" rx="9" fill="url(#mm-panel)"/>
-      <path class="rf-icon" d="M25 102h29m-29 8h20m-20 8h25"/>
+    <g class="scene-panel">
+      <circle class="scene-model-halo" cx="184" cy="112" r="34"/>
+      <rect class="scene-paper" x="161" y="85" width="46" height="54" rx="13"/>
+      <rect x="161" y="85" width="46" height="54" rx="13" fill="url(#mm-glass)"/>
+      <path class="scene-icon" d="m170 103 14-8 14 8-14 8Zm0 8 14 8 14-8"/>
+      <g class="mm-model-dots"><circle cx="177" cy="128" r="1.7"/><circle cx="184" cy="128" r="1.7"/><circle cx="191" cy="128" r="1.7"/></g>
     </g>
-    <text class="rf-note" x="40" y="144">Text</text>
-    <g class="rf-node">
-      <rect class="rf-surface" x="92" y="48" width="62" height="54" rx="14"/>
-      <rect x="92" y="48" width="62" height="54" rx="14" fill="url(#mm-panel)"/>
-      <rect class="rf-highlight" x="92" y="48" width="62" height="54" rx="14"/>
-      <path class="rf-icon" d="m105 69 18-10 18 10-18 10Zm0 8 18 10 18-10"/>
-      <g><rect class="rf-token" x="109" y="92" width="5" height="3" rx="1.5"/><rect class="rf-token" x="117" y="92" width="5" height="3" rx="1.5"/><rect class="rf-token" x="125" y="92" width="5" height="3" rx="1.5"/><rect class="rf-token" x="133" y="92" width="5" height="3" rx="1.5"/></g>
+    <text class="scene-micro" x="184" y="155" text-anchor="middle">vision + language</text>
+    <g class="scene-panel">
+      <rect class="scene-paper" x="246" y="65" width="98" height="105" rx="11"/>
+      <text class="scene-small" x="257" y="82">Attributes</text>
+      <path class="scene-rule" d="M257 90H333"/>
+      <g class="scene-field-keys"><text x="257" y="106">item</text><text x="257" y="126">color</text><text x="257" y="146">price</text></g>
+      <path class="scene-field-placeholder" d="M296 104H327M296 124H327M296 144H327"/>
+      <g class="scene-field-values"><text class="mm-value-item" x="295" y="106">shirt</text><text class="mm-value-color" x="295" y="126">blue</text><text class="mm-value-price" x="295" y="146">$39</text></g>
+      <g class="mm-complete"><circle class="scene-complete-bg" cx="336" cy="65" r="9"/><path class="scene-ok" d="m332 65 3 3 5-6"/></g>
     </g>
-    <text class="rf-label" x="123" y="118">Understand</text>
-    <g class="rf-node">
-      <rect class="rf-surface" x="181" y="50" width="45" height="50" rx="10"/>
-      <rect x="181" y="50" width="45" height="50" rx="10" fill="url(#mm-panel)"/>
-      <g class="rf-icon"><path class="rf-output-line" d="M191 63h25"/><path class="rf-output-line" d="M191 75h18"/><path class="rf-output-line" d="M191 87h22"/></g>
+    <g class="scene-caption" text-anchor="middle">
+      <text class="mm-caption-observe" x="180" y="215">Find evidence in images and text.</text>
+      <text class="mm-caption-connect" x="180" y="215">Connect the evidence across modalities.</text>
+      <text class="mm-caption-extract" x="180" y="215">Extract grounded, structured information.</text>
     </g>
-    <text class="rf-label" x="203.5" y="118">Extract</text>
-    <text class="rf-note" x="123" y="143">Visual + textual evidence</text>
   </svg>
   <span class="focus-number">02 / VISION &amp; LANGUAGE</span>
   <h3>Multimodal Understanding</h3>
